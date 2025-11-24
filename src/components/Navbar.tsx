@@ -61,6 +61,12 @@ function MobileMenu() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
   useEffect(() => {
+    if (!open) return;
+    const onScroll = () => setOpen(false);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [open]);
+  useEffect(() => {
     if (open) {
       const nodes = panelRef.current?.querySelectorAll<HTMLElement>("a,button");
       const first = nodes && nodes[0];
@@ -94,18 +100,18 @@ function MobileMenu() {
         <span className="block w-5 h-[2px] bg-white" />
       </button>
       {open && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur z-50" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur z-50" role="dialog" aria-modal="true" onClick={() => setOpen(false)}>
           <div className="absolute top-4 right-4">
             <button onClick={() => setOpen(false)} className="rounded-md p-2 border border-zinc-800 text-white">✕</button>
           </div>
           <div className="flex h-full items-center justify-center">
-            <div id="mobile-menu" ref={panelRef} tabIndex={-1} className="rounded-2xl p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 w-[90%] max-w-sm">
+            <div id="mobile-menu" ref={panelRef} tabIndex={-1} className="rounded-2xl p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 w-[90%] max-w-sm" onClick={(e) => e.stopPropagation()}>
               <div className="flex flex-col gap-4 text-center">
                 <Link href="/" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Home</Link>
                 <Link href="/about" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">About</Link>
                 <Link href="/services" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Services</Link>
                 <Link href="/testimonials" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Testimonials</Link>
-                <Link href="#" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Contact</Link>
+                <Link href="/contact" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Contact</Link>
                 <Link href="/book/errand" prefetch={false} onClick={() => setOpen(false)} className="mt-4 rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Book an Errand</Link>
               </div>
             </div>

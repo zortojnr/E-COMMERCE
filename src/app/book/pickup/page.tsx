@@ -57,11 +57,13 @@ export default function BookPickupPage() {
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
             <div className={`${poppins.className} text-xl font-bold mb-4`}>Details</div>
             <div className="grid grid-cols-1 gap-4">
-              <input value={itemDesc} onChange={(e)=>setItemDesc(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Item description (required)" />
-              <textarea value={notes} onChange={(e)=>setNotes(e.target.value)} rows={3} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Notes (optional)" />
+              <label className="text-sm text-zinc-400">Item description <span className="text-[color:var(--gold-end)]">*</span></label>
+              <input value={itemDesc} onChange={(e)=>setItemDesc(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. sealed parcel, 2 kg" />
+              <label className="text-sm text-zinc-400">Notes</label>
+              <textarea value={notes} onChange={(e)=>setNotes(e.target.value)} rows={3} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Special handling instructions" />
             </div>
             <div className="mt-6 flex gap-3">
-              <button onClick={next} className="rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]">Next</button>
+              <button onClick={next} disabled={!validStep1} className={`rounded-xl px-6 py-3 ${!validStep1 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Next</button>
             </div>
           </motion.div>
         )}
@@ -70,14 +72,26 @@ export default function BookPickupPage() {
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
             <div className={`${poppins.className} text-xl font-bold mb-4`}>Locations & Schedule</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input value={from} onChange={(e)=>setFrom(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Pickup address (required)" />
-              <input value={to} onChange={(e)=>setTo(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Drop-off address (optional)" />
-              <input value={date} onChange={(e)=>setDate(e.target.value)} type="date" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" />
-              <input value={time} onChange={(e)=>setTime(e.target.value)} type="time" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" />
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-zinc-400">Pickup address <span className="text-[color:var(--gold-end)]">*</span></label>
+                <input value={from} onChange={(e)=>setFrom(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Address & landmark" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-zinc-400">Drop-off address</label>
+                <input value={to} onChange={(e)=>setTo(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Optional" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-zinc-400">Preferred date <span className="text-[color:var(--gold-end)]">*</span></label>
+                <input value={date} onChange={(e)=>setDate(e.target.value)} type="date" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white focus:outline-none focus:border-[color:var(--gold-end)]" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-zinc-400">Preferred time <span className="text-[color:var(--gold-end)]">*</span></label>
+                <input value={time} onChange={(e)=>setTime(e.target.value)} type="time" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white focus:outline-none focus:border-[color:var(--gold-end)]" />
+              </div>
             </div>
             <div className="mt-6 flex gap-3">
               <button onClick={prev} className="rounded-xl px-6 py-3 border border-[color:var(--gold-end)] text-[color:var(--gold-end)]">Back</button>
-              <button onClick={next} className="rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]">Next</button>
+              <button onClick={next} disabled={!validStep2} className={`rounded-xl px-6 py-3 ${!validStep2 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Next</button>
             </div>
           </motion.div>
         )}
@@ -86,9 +100,18 @@ export default function BookPickupPage() {
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
             <div className={`${poppins.className} text-xl font-bold mb-4`}>Contact & Review</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <input value={name} onChange={(e)=>setName(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Name (required)" />
-              <input value={phone} onChange={(e)=>setPhone(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Phone (required)" />
-              <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Email (optional)" />
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-zinc-400">Name <span className="text-[color:var(--gold-end)]">*</span></label>
+                <input value={name} onChange={(e)=>setName(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Your full name" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-sm text-zinc-400">Phone <span className="text-[color:var(--gold-end)]">*</span></label>
+                <input value={phone} onChange={(e)=>setPhone(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. 0803 842 9173" />
+              </div>
+              <div className="flex flex-col gap-2 md:col-span-2">
+                <label className="text-sm text-zinc-400">Email</label>
+                <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Optional" />
+              </div>
             </div>
             <div className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-4 text-zinc-300">
               <div><span className="font-semibold">Type:</span> Pickup</div>
@@ -99,7 +122,7 @@ export default function BookPickupPage() {
             </div>
             <div className="mt-6 flex gap-3">
               <button onClick={prev} className="rounded-xl px-6 py-3 border border-[color:var(--gold-end)] text-[color:var(--gold-end)]">Back</button>
-              <button onClick={submit} className="rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]">Confirm & WhatsApp</button>
+              <button onClick={submit} disabled={!validStep3} className={`rounded-xl px-6 py-3 ${!validStep3 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Confirm & WhatsApp</button>
             </div>
           </motion.div>
         )}
@@ -107,4 +130,3 @@ export default function BookPickupPage() {
     </div>
   );
 }
-
