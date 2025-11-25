@@ -19,7 +19,7 @@ export default function ContactPage() {
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="space-y-6">
               <h1 className={`${poppins.className} text-4xl md:text-5xl font-extrabold leading-tight`}>Get in Touch With Us</h1>
               <div className="h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
-              <p className="max-w-xl text-zinc-300">Reliable support for errands, dispatch and moving, available across Port Harcourt and Warri.</p>
+              <p className="max-w-xl text-zinc-300">Reliable support for errands and dispatch, available in Port Harcourt.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.4 }} className="rounded-xl overflow-hidden bg-[#0A0A0A] border border-[color:rgba(212,167,56,0.40)] hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full md:w-[420px] md:h-[420px]">
               <Image src="/images/wendy5.jpg" alt="Contact visual" width={1200} height={900} sizes="(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw" unoptimized={!isProd} className="w-full h-full object-cover" />
@@ -57,10 +57,7 @@ export default function ContactPage() {
                   <div>No. 6, Mission Road, Alakahia</div>
                 </div>
                 <div className="h-px w-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
-                <div>
-                  <div className="font-semibold mb-1">Warri / Jeddo Branch</div>
-                  <div>Plot 28, DDPA Housing Estate, Jeddo</div>
-                </div>
+                
               </div>
             </motion.div>
           </motion.div>
@@ -70,8 +67,8 @@ export default function ContactPage() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-[linear-gradient(180deg,var(--gold-start),var(--gold-end))]" />
             <div className={`${poppins.className} text-xl font-bold mb-4`}>Our Guarantees</div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-zinc-300">
-              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />Reliability, Consistent service trusted since 2019.</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-zinc-300">
+              <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />Reliability, Consistent service you can trust.</div>
               <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />Speed, Fast response and rapid deliveries.</div>
               <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />Accountability, Transparent communication every step of the way.</div>
               <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />Safety, Your items handled with care and professionalism.</div>
@@ -122,11 +119,10 @@ export default function ContactPage() {
                 <div>
                   <div className={`${poppins.className} font-semibold mb-3`}>Locations</div>
                   <div className="text-sm text-zinc-300">Head Office: No. 6, Mission Road, Alakahia, Port Harcourt</div>
-                  <div className="text-sm text-zinc-300">Branch Office: Plot 28, DDPA Housing Estate, Jeddo, Warri</div>
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2019 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

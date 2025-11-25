@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
         <section className="pt-24 md:pt-32 text-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item}>
             <h1 className={`${poppins.className} text-4xl md:text-5xl font-extrabold`}>What Our Customers Say About Us</h1>
-            <p className="mt-4 text-zinc-300">Real experiences from real users who trust TribesByWendy Errands for deliveries, errands and fast logistics across Port Harcourt & Warri.</p>
+            <p className="mt-4 text-zinc-300">Real experiences from real users who trust TribesByWendy Errands for deliveries, errands and fast logistics in Port Harcourt.</p>
             <div className="mx-auto mt-6 h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
           </motion.div>
         </section>
@@ -91,7 +91,7 @@ export default function TestimonialsPage() {
         <section className="py-16">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="rounded-2xl p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
             <div className="text-3xl mb-4">“</div>
-            <div className={`${poppins.className} text-lg md:text-xl font-semibold`}>Trusted by individuals, students and business owners since 2019, TribesByWendy Errands continues to deliver reliability, speed and peace of mind.</div>
+            <div className={`${poppins.className} text-lg md:text-xl font-semibold`}>Trusted by individuals, students and business owners, TribesByWendy Errands continues to deliver reliability, speed and peace of mind.</div>
           </motion.div>
         </section>
 
@@ -125,11 +125,10 @@ export default function TestimonialsPage() {
                 <div>
                   <div className={`${poppins.className} font-semibold mb-3`}>Locations</div>
                   <div className="text-sm text-zinc-300">Head Office: No. 6, Mission Road, Alakahia, Port Harcourt</div>
-                  <div className="text-sm text-zinc-300">Branch Office: Plot 28, DDPA Housing Estate, Jeddo, Warri</div>
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2019 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

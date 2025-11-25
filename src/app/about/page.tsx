@@ -36,34 +36,48 @@ function FadeInOnScroll({ children }: { children: React.ReactNode }) {
 }
 
 export default function AboutPage() {
-  const [imgSrc, setImgSrc] = useState("/wendy2.jpg");
+  const [visibleHighlights, setVisibleHighlights] = useState(false);
+  function CountUp({ end, duration = 1000, suffix = "", formatK = false }: { end: number; duration?: number; suffix?: string; formatK?: boolean }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [val, setVal] = useState(0);
+    useEffect(() => {
+      let raf = 0;
+      const start = performance.now();
+      const tick = (t: number) => {
+        const p = Math.min(1, (t - start) / duration);
+        const v = Math.floor(p * end);
+        setVal(v);
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+      return () => cancelAnimationFrame(raf);
+    }, [end, duration]);
+    const display = formatK && end >= 1000 ? `${(val / 1000).toFixed(val >= 10000 ? 0 : 1)}k${suffix}` : `${val}${suffix}`;
+    return <div ref={ref} className={`${poppins.className} text-2xl font-extrabold`}>{display}</div>;
+  }
   return (
     <div className={`${dmSans.variable} ${poppins.variable} min-h-screen bg-black text-white`}>
       <main className="mx-auto max-w-7xl px-6">
         <section className="pt-24 md:pt-32 text-center">
           <FadeInOnScroll>
-            <h1 className={`${poppins.className} text-4xl md:text-5xl font-extrabold`}>Your Trusted Errands & Logistics Partner Since 2019</h1>
-            <p className="mt-4 text-zinc-300">Delivering reliability, speed and stress-free logistics from Port Harcourt to Warri.</p>
+            <h1 className={`${poppins.className} text-4xl md:text-5xl font-extrabold`}>Your Trusted Errands & Logistics Partner</h1>
+            <p className="mt-4 text-zinc-300">Delivering reliability, speed and stress-free logistics in Port Harcourt.</p>
+            
             <div className="mx-auto mt-6 h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
           </FadeInOnScroll>
         </section>
 
         <section className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <FadeInOnScroll>
-              <div className="space-y-5">
-                <p className="text-zinc-300">TribesByWendy Errands was founded with one mission, to make movement and errands simple, reliable, and stress-free.</p>
-                <p className="text-zinc-300">Since 2019, we have supported individuals, families, students and businesses with fast errands, dispatch delivery, and full relocation services.</p>
-                <p className="text-zinc-300">From same-day deliveries to complete home and office moves, we are committed to handling every request with professionalism, care and trust.</p>
-              </div>
-            </FadeInOnScroll>
-            <FadeInOnScroll>
-              <div className="rounded-xl overflow-hidden bg-[#0B0B0B] border border-[color:rgba(212,167,56,0.40)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full md:w-[420px] md:h-[420px]">
-                <Image src={imgSrc} alt="TribesByWendy founder and brand" width={1200} height={900} className="w-full h-full object-cover" onError={() => { logger.warn("AboutPage", "image-fallback", { tried: imgSrc, fallback: "/hero.jpg" }); setImgSrc("/hero.jpg"); }} />
-              </div>
-            </FadeInOnScroll>
-          </div>
+          <FadeInOnScroll>
+            <div className="space-y-4 max-w-2xl mx-auto text-center">
+              <div className={`${poppins.className} text-2xl font-bold`}>Who we are</div>
+              <p className="text-zinc-300 leading-relaxed">TribesByWendy Errands exists to remove stress from everyday movement. We make errands simple and dependable by combining trained riders, clear communication and a premium approach to service.</p>
+              <p className="text-zinc-300 leading-relaxed">We support professionals, families, students and small businesses in Port Harcourt with timely errands and secure dispatch delivery. Every request is handled with care, accountability and a focus on getting it right the first time.</p>
+              <p className="text-zinc-300 leading-relaxed">Our standard is consistency: clear updates, on-time pickups, careful handling and fair pricing. Whether it’s documents, groceries or store-to-home deliveries, we bring speed and reliability together in a way that lets you focus on what matters.</p>
+            </div>
+          </FadeInOnScroll>
         </section>
+        
 
         <section className="py-16">
           <FadeInOnScroll>
@@ -72,81 +86,79 @@ export default function AboutPage() {
                 { title: "Mission", text: "To simplify movement and logistics by offering fast, affordable and reliable errand & delivery services." },
                 { title: "Vision", text: "To become the most trusted personal and business logistics partner across Nigeria." },
               ].map((card) => (
-                <div key={card.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)]">
-                  <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
-                  <div className={`${poppins.className} font-bold mb-2`}>{card.title}</div>
-                  <div className="text-zinc-300">{card.text}</div>
-                </div>
-              ))}
-            </div>
-          </FadeInOnScroll>
-        </section>
-
-        <section className="py-16">
-          <FadeInOnScroll>
-            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Our Core Values</h2>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {[
-                { title: "Reliability", text: "Delivering consistently since 2019." },
-                { title: "Speed", text: "Your errands handled quickly and efficiently." },
-                { title: "Affordability", text: "Cost-effective logistics without the stress." },
-                { title: "Professionalism", text: "Friendly, trained and responsible team." },
-                { title: "Trust", text: "Every delivery treated with priority and care." },
-              ].map((v) => (
-                <div key={v.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 transition-all duration-200 hover:border-[color:var(--gold-end)] hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
-                  <div className={`${poppins.className} font-semibold mb-2`}>{v.title}</div>
-                  <div className="text-sm text-zinc-300">{v.text}</div>
-                </div>
-              ))}
-            </div>
-          </FadeInOnScroll>
-        </section>
-
-        <section className="py-16">
-          <FadeInOnScroll>
-            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Our Journey</h2>
-            <div className="mt-8 relative">
-              <div className="absolute left-3 top-0 bottom-0 w-px bg-[linear-gradient(180deg,var(--gold-start),var(--gold-end))]" />
-              <div className="space-y-8 pl-10">
-                {[
-                  { year: "2019", text: "Started operations in Port Harcourt." },
-                  { year: "2020", text: "Expanded into full relocation support." },
-                  { year: "2021", text: "Opened Warri/Jeddo branch." },
-                  { year: "Today", text: "Continuing to serve customers with excellence." },
-                ].map((t) => (
-                  <div key={t.year} className="flex items-start gap-4">
-                    <div className="mt-1 w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
-                    <div>
-                      <div className={`${poppins.className} font-semibold`}>{t.year}</div>
-                      <div className="text-zinc-300">{t.text}</div>
+                <div key={card.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] backdrop-blur border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)]">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
+                    <div className="flex-1">
+                      <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
+                      <div className={`${poppins.className} font-bold mb-2`}>{card.title}</div>
+                      <div className="text-zinc-300">{card.text}</div>
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+          </FadeInOnScroll>
+        </section>
+
+        <section className="py-16 relative">
+          <FadeInOnScroll>
+            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold text-center`}>Our Core Values</h2>
+            <div className="mt-8 relative">
+              <div className="hidden md:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[linear-gradient(180deg,var(--gold-start),var(--gold-end))]" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-6">
+                  {[
+                    { title: "Reliability", text: "Delivering consistently." },
+                    { title: "Affordability", text: "Cost-effective logistics without the stress." },
+                    { title: "Trust", text: "Every delivery treated with priority and care." },
+                  ].map((v) => (
+                    <div key={v.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] backdrop-blur-sm border border-zinc-800 transition-all duration-200 hover:border-[color:var(--gold-end)] hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+                      <div className="flex items-center gap-3 mb-2"><span className="w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} font-semibold`}>{v.title}</div></div>
+                      <div className="text-sm text-zinc-300">{v.text}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-6">
+                  {[
+                    { title: "Speed", text: "Your errands handled quickly and efficiently." },
+                    { title: "Professionalism", text: "Friendly, trained and responsible team." },
+                  ].map((v) => (
+                    <div key={v.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] backdrop-blur-sm border border-zinc-800 transition-all duration-200 hover:border-[color:var(--gold-end)] hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+                      <div className="flex items-center gap-3 mb-2"><span className="w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} font-semibold`}>{v.title}</div></div>
+                      <div className="text-sm text-zinc-300">{v.text}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeInOnScroll>
         </section>
 
+        
+
         <section className="py-16">
           <FadeInOnScroll>
-            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Since 2019 — Highlights</h2>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold text-center`}>Highlights</h2>
+            <div className="mt-8 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { k: "15k+", v: "pickups completed" },
-                { k: "1.2k+", v: "relocations handled" },
-                { k: "98%", v: "satisfaction rating" },
-                { k: "2", v: "cities served" },
+                { end: 15000, label: "pickups completed", formatK: true, suffix: "+" },
+                { end: 98, label: "satisfaction rating", formatK: false, suffix: "%" },
+                { end: 1, label: "city served", formatK: false, suffix: "" },
+                { end: 1200, label: "repeat orders", formatK: true, suffix: "+" },
               ].map((s) => (
-                <div key={s.v} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+                <div key={s.label} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
                   <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
-                  <div className={`${poppins.className} text-2xl font-extrabold`}>{s.k}</div>
-                  <div className="text-zinc-300">{s.v}</div>
+                  <CountUp end={s.end} formatK={s.formatK} suffix={s.suffix} />
+                  <div className="text-zinc-300">{s.label}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-xs text-zinc-500">Cities: Port Harcourt & Warri</div>
+            <div className="mt-3 text-xs text-zinc-500">City: Port Harcourt</div>
           </FadeInOnScroll>
         </section>
+
+        
 
         <section className="py-16">
           <FadeInOnScroll>
@@ -157,7 +169,7 @@ export default function AboutPage() {
                 { n: 2, t: "We Collect & Deliver", d: "A trained rider handles your request with care." },
                 { n: 3, t: "You Relax", d: "Track progress and receive your items on time." },
               ].map((step) => (
-                <div key={step.n} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:scale-[1.02]">
+                <div key={step.n} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:scale-[1.02]">
                   <div className="w-8 h-8 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] text-black flex items-center justify-center font-bold mb-4">{step.n}</div>
                   <div className={`${poppins.className} font-semibold mb-1`}>{step.t}</div>
                   <div className="text-sm text-zinc-300">{step.d}</div>
@@ -167,51 +179,17 @@ export default function AboutPage() {
           </FadeInOnScroll>
         </section>
 
-        <section className="py-16">
-          <FadeInOnScroll>
-            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Service Areas</h2>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-                <div className={`${poppins.className} font-semibold mb-3`}>Port Harcourt</div>
-                <ul className="space-y-2 text-sm text-zinc-300">
-                  {[
-                    "Alakahia",
-                    "Choba",
-                    "GRA Phase 2/3",
-                    "Rumuokoro",
-                    "Ada George",
-                  ].map((a) => (
-                    <li key={a} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{a}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-                <div className={`${poppins.className} font-semibold mb-3`}>Warri / Jeddo</div>
-                <ul className="space-y-2 text-sm text-zinc-300">
-                  {[
-                    "Jeddo",
-                    "PTI Road",
-                    "Effurun",
-                    "Udu",
-                  ].map((a) => (
-                    <li key={a} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{a}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </FadeInOnScroll>
-        </section>
+        
 
         <section className="py-16">
           <FadeInOnScroll>
             <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Services At a Glance</h2>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { title: "Errand Services", text: "Everyday tasks handled efficiently and securely." },
                 { title: "Dispatch Delivery", text: "Fast city-wide deliveries with trained riders." },
-                { title: "Moving & Relocation", text: "Home and office moves with complete care." },
               ].map((s) => (
-                <div key={s.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:scale-[1.02]">
+                <div key={s.title} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:scale-[1.02]">
                   <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
                   <div className={`${poppins.className} font-semibold mb-2`}>{s.title}</div>
                   <div className="text-sm text-zinc-300">{s.text}</div>
@@ -224,17 +202,19 @@ export default function AboutPage() {
         <section className="py-16">
           <FadeInOnScroll>
             <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>FAQs</h2>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="mt-8 divide-y divide-zinc-800 border border-zinc-800 rounded-xl overflow-hidden">
               {[
                 { q: "How fast are same-day pickups?", a: "Typically 1–3 hours depending on location." },
                 { q: "Do you handle fragile items?", a: "Yes, riders are trained; items are packaged carefully." },
-                { q: "Can you move a full apartment?", a: "Yes, full relocation services are available." },
                 { q: "Operating hours?", a: "Mon–Sat, 8am–6pm; urgent pickups by request." },
-              ].map((f) => (
-                <div key={f.q} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-                  <div className={`${poppins.className} font-semibold mb-2`}>{f.q}</div>
-                  <div className="text-sm text-zinc-300">{f.a}</div>
-                </div>
+              ].map((f, i) => (
+                <details key={f.q} className="group">
+                  <summary className="list-none cursor-pointer px-6 py-4 flex items-center justify-between">
+                    <span className={`${poppins.className} font-semibold`}>{f.q}</span>
+                    <span className="w-6 h-6 rounded-full border border-[color:var(--gold-end)] grid place-items-center text-[color:var(--gold-end)] transition-transform duration-200 group-open:rotate-180">⌄</span>
+                  </summary>
+                  <div className="px-6 pb-6 text-sm text-zinc-300">{f.a}</div>
+                </details>
               ))}
             </div>
           </FadeInOnScroll>
@@ -245,7 +225,7 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-2xl bg-[#0B0B0B] border border-zinc-800">
               <div className="p-8 md:p-12">
                 <div className={`${poppins.className} text-2xl md:text-3xl font-extrabold`}>Ready for stress-free errands and deliveries?</div>
-                <button className="mt-6 rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Book an Errand</button>
+                <a href="/book/errand" className="inline-block mt-6 rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Book an Errand</a>
               </div>
             </div>
           </FadeInOnScroll>
@@ -271,11 +251,10 @@ export default function AboutPage() {
                 <div>
                   <div className={`${poppins.className} font-semibold mb-3`}>Locations</div>
                   <div className="text-sm text-zinc-300">Head Office: No. 6, Mission Road, Alakahia, Port Harcourt</div>
-                  <div className="text-sm text-zinc-300">Branch Office: Plot 28, DDPA Housing Estate, Jeddo, Warri</div>
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2019 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </FadeInOnScroll>
         </footer>
       </main>

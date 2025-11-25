@@ -1,10 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #F5F5F5;
+  --brand-bg: #000000;
+  --brand-bg-2: #0B0B0B;
+  --brand-text: #FFFFFF;
+  --brand-text-muted: #E0E0E0;
   --gold-start: #D4A738;
   --gold-end: #F5C76D;
+  --brand-border: rgba(212,167,56,0.40);
+  --brand-glow: rgba(245,199,109,0.25);
+  --brand-glow-hover: rgba(245,199,109,0.35);
 }
 
 
@@ -17,8 +22,8 @@
 
 html, body { min-height: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--brand-bg);
+  color: var(--brand-text);
 }
 
 .shimmer {

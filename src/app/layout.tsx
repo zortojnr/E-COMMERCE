@@ -11,7 +11,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "TribesByWendy Errands — Premium Logistics",
-  description: "Affordable, fast and reliable deliveries and moving services across Port Harcourt & Warri.",
+  description: "Affordable, fast and reliable errands and dispatch services in Port Harcourt.",
 };
 
 export default function RootLayout({

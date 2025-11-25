@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Poppins, DM_Sans } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
+import CarouselCard from "@/components/CarouselCard";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["700","800"], variable: "--font-poppins" });
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dmsans" });
@@ -27,23 +29,39 @@ function FadeInOnScroll({ children }: { children: React.ReactNode }) {
 
 export default function ServicesPage() {
   const isProd = process.env.NODE_ENV === "production";
-  const [thumbErrand, setThumbErrand] = useState("/images/wendy2.jpg");
-  const [thumbDispatch, setThumbDispatch] = useState("/images/wendy5.jpg");
-  const [thumbMove, setThumbMove] = useState("/images/wendy7.jpg");
-  const [imgErrand, setImgErrand] = useState("/images/wendy2.jpg");
-  const [imgDispatch, setImgDispatch] = useState("/images/wendy5.jpg");
-  const [imgMove, setImgMove] = useState("/images/wendy7.jpg");
+  const allImages = ["/images/wendy1.jpg","/images/wendy 2.jpg","/images/wendy3.jpg","/images/wendy5.jpg","/images/wendy6.jpg","/images/wendy 7.jpg"];
   const [covPH, setCovPH] = useState("/images/wendy1.jpg");
-  const [covWarri, setCovWarri] = useState("/images/wendy6.jpg");
 
   return (
     <div className={`${dmSans.variable} ${poppins.variable} min-h-screen bg-black text-white`}>
       <main className="mx-auto max-w-7xl px-6">
         <section className="pt-24 md:pt-32 text-center">
           <FadeInOnScroll>
-            <div className="inline-flex items-center rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] px-3 py-1 text-xs font-semibold text-black">Since 2019</div>
+            <div className="mx-auto h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
             <h1 className={`${poppins.className} mt-4 text-4xl md:text-5xl font-extrabold`}>Services tailored to your everyday movement.</h1>
-            <p className="mt-4 text-zinc-300">Errands. Dispatch. Relocation. We handle it all with professionalism and speed.</p>
+            <p className="mt-4 text-[color:var(--brand-text-muted)]">Errands. Dispatch. We handle it with professionalism and speed.</p>
+          </FadeInOnScroll>
+        </section>
+
+        <section className="py-10">
+          <FadeInOnScroll>
+            <div className="rounded-xl p-4 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center justify-items-center" role="list" aria-label="Certified partners">
+                <div role="listitem" className="flex items-center justify-center h-16">
+                  <Image src="/images/logos/gig.png" alt="GIG Logistics" width={140} height={40} unoptimized={!isProd} onError={(e) => { (e.currentTarget as any).style.display = 'none'; }} />
+                  <span className="sr-only">GIG Logistics</span>
+                </div>
+                <div role="listitem" className="flex items-center justify-center h-16">
+                  <Image src="/images/logos/fedex.png" alt="FedEx" width={120} height={40} unoptimized={!isProd} onError={(e) => { (e.currentTarget as any).style.display = 'none'; }} />
+                  <span className="sr-only">FedEx</span>
+                </div>
+                <div role="listitem" className="flex items-center justify-center h-16">
+                  <Image src="/images/logos/dhl.png" alt="DHL" width={120} height={40} unoptimized={!isProd} onError={(e) => { (e.currentTarget as any).style.display = 'none'; }} />
+                  <span className="sr-only">DHL</span>
+                </div>
+              </div>
+              <div className="mt-3 text-xs text-[color:var(--brand-text-muted)]">GIG Logistics, FedEx, and DHL are trademarks of their respective owners; used with attribution.</div>
+            </div>
           </FadeInOnScroll>
         </section>
 
@@ -51,29 +69,35 @@ export default function ServicesPage() {
           <FadeInOnScroll>
             <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold text-center`}>What we help you with</h2>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+              <div className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)] hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow)] hover:scale-[1.02]">
                 <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
-                <div className={`${poppins.className} font-semibold mb-2`}>Errand Services</div>
-                <div className="text-sm text-zinc-300">Simplifying your everyday tasks with fast and dependable errands.</div>
-                <div className="absolute top-4 right-4 rounded-md overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
-                  <Image src={thumbErrand} alt="Errand Services" width={96} height={64} sizes="96px" unoptimized={!isProd} className="object-cover rounded-md" onError={() => setThumbErrand("/hero.jpg")} />
+                <div className="flex items-center gap-2 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} font-semibold`}>Errand Services</div></div>
+                <div className="text-sm text-[color:var(--brand-text-muted)]">Simplifying your everyday tasks with fast and dependable errands.</div>
+                <div className="absolute top-4 right-4 w-24 h-16 rounded-md overflow-hidden border border-[color:var(--brand-border)]">
+                  <CarouselCard images={allImages} intervalMs={5000} aspect="wide" showControls={false} className="!w-full !h-full" />
                 </div>
               </div>
-              <div className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+              <div className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)] hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow)] hover:scale-[1.02]">
                 <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
-                <div className={`${poppins.className} font-semibold mb-2`}>Dispatch Delivery</div>
-                <div className="text-sm text-zinc-300">Secure and efficient parcel movement for individuals and businesses.</div>
-                <div className="absolute top-4 right-4 rounded-md overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
-                  <Image src={thumbDispatch} alt="Dispatch Delivery" width={96} height={64} sizes="96px" unoptimized={!isProd} className="object-cover rounded-md" onError={() => setThumbDispatch("/hero.jpg")} />
+                <div className="flex items-center gap-2 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} font-semibold`}>Dispatch Delivery</div></div>
+                <div className="text-sm text-[color:var(--brand-text-muted)]">Secure and efficient parcel movement for individuals and businesses.</div>
+                <div className="absolute top-4 right-4 w-24 h-16 rounded-md overflow-hidden border border-[color:var(--brand-border)]">
+                  <CarouselCard images={allImages} intervalMs={5000} aspect="wide" showControls={false} className="!w-full !h-full" />
                 </div>
               </div>
-              <div className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+              <div className="relative rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)] hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow)] hover:scale-[1.02]">
                 <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
-                <div className={`${poppins.className} font-semibold mb-2`}>Moving & Relocation</div>
-                <div className="text-sm text-zinc-300">Hassle-free moving for students, families and offices.</div>
-                <div className="absolute top-4 right-4 rounded-md overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
-                  <Image src={thumbMove} alt="Moving & Relocation" width={96} height={64} sizes="96px" unoptimized={!isProd} className="object-cover rounded-md" onError={() => setThumbMove("/hero.jpg")} />
-                </div>
+                <div className="flex items-center gap-2 mb-2"><span className="inline-block w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} font-semibold`}>Interstate Logistics via Certified Partners</div></div>
+                <ul className="mt-2 space-y-2 text-sm text-[color:var(--brand-text-muted)]">
+                  {[
+                    "Nationwide pickup and delivery corridors",
+                    "Service level agreements: Standard (48–72h), Express (24–48h)",
+                    "Special handling: fragile, insured consignments, document handling",
+                    "Proof of delivery available upon request",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{item}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </FadeInOnScroll>
@@ -83,7 +107,7 @@ export default function ServicesPage() {
           <FadeInOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <div className={`${poppins.className} text-xl font-bold mb-3`}>Errand Services</div>
+                <div className="flex items-center gap-2 mb-3"><span className="inline-block w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} text-xl font-bold`}>Errand Services</div></div>
                 <div className="text-zinc-300 mb-2">Perfect for professionals, families & students.</div>
                 <ul className="space-y-2 text-sm text-zinc-300">
                   {[
@@ -96,9 +120,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-xl overflow-hidden bg-[#0B0B0B] border border-[color:rgba(212,167,56,0.40)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full md:w-[420px] md:h-[420px]">
-                <Image src={imgErrand} alt="Errand services image" width={1200} height={900} sizes="(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw" unoptimized={!isProd} className="w-full h-full object-cover" onError={() => setImgErrand("/hero.jpg")} />
-              </div>
+              <CarouselCard images={allImages} intervalMs={5000} aspect="square" />
             </div>
           </FadeInOnScroll>
         </section>
@@ -106,11 +128,11 @@ export default function ServicesPage() {
         <section className="py-16">
           <FadeInOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div className="order-2 md:order-1 rounded-xl overflow-hidden bg-[#0B0B0B] border border-[color:rgba(212,167,56,0.40)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full md:w-[420px] md:h-[420px]">
-                <Image src={imgDispatch} alt="Dispatch delivery image" width={1200} height={900} sizes="(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw" unoptimized={!isProd} className="w-full h-full object-cover" onError={() => setImgDispatch("/hero.jpg")} />
+              <div className="order-2 md:order-1">
+                <CarouselCard images={allImages} intervalMs={5000} aspect="square" />
               </div>
               <div className="order-1 md:order-2">
-                <div className={`${poppins.className} text-xl font-bold mb-3`}>Dispatch Delivery</div>
+                <div className="flex items-center gap-2 mb-3"><span className="inline-block w-3 h-3 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><div className={`${poppins.className} text-xl font-bold`}>Dispatch Delivery</div></div>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {["Same-day Delivery","Secure Handling","Quick Response"].map((tag) => (
                     <span key={tag} className="text-xs rounded-full px-3 py-1 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] text-black font-semibold">{tag}</span>
@@ -131,47 +153,35 @@ export default function ServicesPage() {
           </FadeInOnScroll>
         </section>
 
-        <section className="py-16">
-          <FadeInOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div>
-                <div className={`${poppins.className} text-xl font-bold mb-3`}>Moving & Relocation</div>
-                <div className="text-zinc-300 mb-2">Stress-free moves for homes, offices and students.</div>
-                <ul className="space-y-2 text-sm text-zinc-300">
-                  {[
-                    "Hostel/apartment moves",
-                    "Packing & loading support",
-                    "Transport arrangement",
-                    "Business relocation help",
-                  ].map((b) => (
-                    <li key={b} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{b}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-xl overflow-hidden bg-[#0B0B0B] border border-[color:rgba(212,167,56,0.40)] transition-all duration-200 hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full md:w-[420px] md:h-[420px]">
-                <Image src={imgMove} alt="Moving & relocation image" width={1200} height={900} sizes="(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw" unoptimized={!isProd} className="w-full h-full object-cover" onError={() => setImgMove("/hero.jpg")} />
-              </div>
-            </div>
-          </FadeInOnScroll>
-        </section>
+        
 
         <section className="py-16">
           <FadeInOnScroll>
-            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Where we currently serve</h2>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
-                <div className={`${poppins.className} font-semibold mb-2`}>Port Harcourt</div>
-                <div className="text-sm text-zinc-300 mb-4">Head Office: No. 6, Mission Road, Alakahia</div>
-                <div className="rounded-md overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
-                  <Image src={covPH} alt="Port Harcourt office" width={600} height={360} sizes="(min-width: 1024px) 50vw, 100vw" unoptimized={!isProd} className="w-full h-auto object-cover" onError={() => setCovPH("/hero.jpg")} />
-                </div>
+            <h2 className={`${poppins.className} text-2xl md:text-3xl font-bold`}>Interstate Service Coverage</h2>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
+                <div className={`${poppins.className} font-semibold mb-3`}>Operational States/Regions</div>
+                <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
+                  {["Rivers","Lagos","Abuja","Ogun","Kano"].map((s) => (
+                    <li key={s} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{s}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
-                <div className={`${poppins.className} font-semibold mb-2`}>Warri / Jeddo</div>
-                <div className="text-sm text-zinc-300 mb-4">Branch Office: Plot 28, DDPA Housing Estate</div>
-                <div className="rounded-md overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
-                  <Image src={covWarri} alt="Warri branch" width={600} height={360} sizes="(min-width: 1024px) 50vw, 100vw" unoptimized={!isProd} className="w-full h-auto object-cover" onError={() => setCovWarri("/hero.jpg")} />
-                </div>
+              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
+                <div className={`${poppins.className} font-semibold mb-3`}>Service Level Agreements</div>
+                <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
+                  {["Standard: 48–72 hours","Express: 24–48 hours","On-time target: ≥ 98%"].map((s) => (
+                    <li key={s} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{s}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
+                <div className={`${poppins.className} font-semibold mb-3`}>Special Handling Capabilities</div>
+                <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
+                  {["Fragile items","Secure parcels","Insured consignments","Document handling"].map((s) => (
+                    <li key={s} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />{s}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </FadeInOnScroll>
@@ -179,11 +189,11 @@ export default function ServicesPage() {
 
         <section className="my-20">
           <FadeInOnScroll>
-            <div className="relative overflow-hidden rounded-2xl bg-[#0B0B0B] border border-zinc-800">
+            <div className="relative overflow-hidden rounded-2xl bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)]">
               <div className="p-8 md:p-12">
                 <div className={`${poppins.className} text-2xl md:text-3xl font-extrabold`}>Ready to book a service?</div>
-                <div className="mt-2 text-sm md:text-base text-zinc-300">Errands, dispatch and moving, handled professionally.</div>
-                <a href="/book/pickup" className="mt-6 inline-block rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Book a Service Now</a>
+                <div className="mt-2 text-sm md:text-base text-[color:var(--brand-text-muted)]">Errands and dispatch, handled professionally.</div>
+                <Link prefetch={false} href="/book/pickup" className="mt-6 inline-block rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)]">Book a Service Now</Link>
               </div>
             </div>
           </FadeInOnScroll>
@@ -209,11 +219,10 @@ export default function ServicesPage() {
                 <div>
                   <div className={`${poppins.className} font-semibold mb-3`}>Locations</div>
                   <div className="text-sm text-zinc-300">Head Office: No. 6, Mission Road, Alakahia, Port Harcourt</div>
-                  <div className="text-sm text-zinc-300">Branch Office: Plot 28, DDPA Housing Estate, Jeddo, Warri</div>
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2019 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </FadeInOnScroll>
         </footer>
       </main>
