@@ -1,10 +1,7 @@
 "use client";
-import { Poppins, DM_Sans } from "next/font/google";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["700","800"], variable: "--font-poppins" });
-const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dmsans" });
 
 const item = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } };
 
@@ -40,10 +37,10 @@ export default function BookPickupPage() {
   }
 
   return (
-    <div className={`${dmSans.variable} ${poppins.variable} min-h-screen bg-black text-white`}>
+    <div className={`min-h-screen bg-black text-white`}>
       <main className="mx-auto max-w-7xl px-6 py-24">
         <motion.div initial="hidden" animate="show" variants={item} className="mb-8">
-          <h1 className={`${poppins.className} text-3xl md:text-4xl font-extrabold`}>Book a Pickup</h1>
+          <h1 className={`text-3xl md:text-4xl font-extrabold`}>Book a Pickup</h1>
           <p className="mt-2 text-zinc-300">Fast, reliable pickup scheduling in a few simple steps.</p>
         </motion.div>
 
@@ -55,7 +52,7 @@ export default function BookPickupPage() {
 
         {step === 1 && (
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-            <div className={`${poppins.className} text-xl font-bold mb-4`}>Details</div>
+            <div className={`text-xl font-bold mb-4`}>Details</div>
             <div className="grid grid-cols-1 gap-4">
               <label className="text-sm text-zinc-400">Item description <span className="text-[color:var(--gold-end)]">*</span></label>
               <input value={itemDesc} onChange={(e)=>setItemDesc(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. sealed parcel, 2 kg" />
@@ -70,7 +67,7 @@ export default function BookPickupPage() {
 
         {step === 2 && (
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-            <div className={`${poppins.className} text-xl font-bold mb-4`}>Locations & Schedule</div>
+            <div className={`text-xl font-bold mb-4`}>Locations & Schedule</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Pickup address <span className="text-[color:var(--gold-end)]">*</span></label>
@@ -98,7 +95,7 @@ export default function BookPickupPage() {
 
         {step === 3 && (
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-            <div className={`${poppins.className} text-xl font-bold mb-4`}>Contact & Review</div>
+            <div className={`text-xl font-bold mb-4`}>Contact & Review</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Name <span className="text-[color:var(--gold-end)]">*</span></label>

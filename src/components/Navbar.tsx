@@ -7,6 +7,7 @@ import { logger } from "@/lib/logger";
 
 export default function Navbar() {
   const [navSolid, setNavSolid] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
   useEffect(() => {
     const onScroll = () => setNavSolid(window.scrollY > 12);
@@ -27,27 +28,74 @@ export default function Navbar() {
       aria-label="Main Navigation"
     >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.jpg" alt="TribesByWendy logo" width={40} height={40} className="rounded" />
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo - Left */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <Image src="/logo.jpg" alt="TribesByWendy logo" width={48} height={48} className="rounded" />
             <div className="leading-tight">
-              <div className="font-semibold tracking-tight text-white">TribesByWendy Errands</div>
+              <div className="font-bold tracking-tight text-white text-lg">TribesByWendy Errands</div>
               <div className="text-xs text-[color:var(--brand-text-muted)]">THINK LOGISTICS, THINK US</div>
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-white">
-            <Link href="/" prefetch={false} className="hover:text-[color:var(--gold-end)]">Home</Link>
-            <Link href="/about" prefetch={false} className="hover:text-[color:var(--gold-end)]">About</Link>
-            <Link href="/services" prefetch={false} className="hover:text-[color:var(--gold-end)]">Services</Link>
-            <Link href="/testimonials" prefetch={false} className="hover:text-[color:var(--gold-end)]">Testimonials</Link>
-            <Link href="/contact" prefetch={false} className="hover:text-[color:var(--gold-end)]">Contact</Link>
+          
+          {/* Navigation - Center */}
+          <nav className="hidden md:flex items-center gap-8 text-sm text-white mx-auto">
+            <Link href="/" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Home</Link>
+            <Link href="/about" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">About Us</Link>
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <Link
+                href="/services"
+                prefetch={false}
+                aria-haspopup="menu"
+                aria-expanded={servicesOpen}
+                className="hover:text-[color:var(--gold-end)] transition-colors"
+                onFocus={() => setServicesOpen(true)}
+                onBlur={() => setServicesOpen(false)}
+              >
+                Services
+              </Link>
+              {servicesOpen && (
+                <div
+                  role="menu"
+                  aria-label="Services list"
+                  className="absolute left-0 mt-3 w-64 rounded-2xl bg-[rgba(20,20,20,0.85)] border border-zinc-800 shadow-lg p-2"
+                >
+                  {[
+                    { href: "/services#errand", label: "Errand Services" },
+                    { href: "/services#dispatch", label: "Dispatch Delivery" },
+                    { href: "/services#same-day", label: "Same day delivery" },
+                    { href: "/services#door-to-door", label: "Door to door delivery" },
+                    { href: "/services#payment-on-delivery", label: "Payment on delivery" },
+                    { href: "/services#warehousing", label: "Warehousing" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      prefetch={false}
+                      role="menuitem"
+                      className="block rounded-xl px-3 py-2 text-white hover:bg-[rgba(30,30,30,0.9)] hover:text-[color:var(--gold-end)] transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Link href="/testimonials" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Testimonials</Link>
+            <Link href="/contact" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Contact Us</Link>
           </nav>
-          <div className="hidden md:block">
-            <Link href="/book/errand" prefetch={false} className="rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)]">
+          
+          {/* Action Button - Right */}
+          <div className="hidden md:block flex-shrink-0">
+            <Link href="/book/errand" prefetch={false} className="rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)] hover:scale-105">
               Book an Errand
             </Link>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden ml-auto">
             <MobileMenu />
           </div>
         </div>
@@ -126,10 +174,10 @@ function MobileMenu() {
               </div>
               <div className="flex flex-col gap-4 text-center text-white">
                 <Link href="/" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Home</Link>
-                <Link href="/about" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">About</Link>
+                <Link href="/about" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">About Us</Link>
                 <Link href="/services" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Services</Link>
                 <Link href="/testimonials" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Testimonials</Link>
-                <Link href="/contact" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Contact</Link>
+                <Link href="/contact" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4">Contact Us</Link>
                 <Link href="/book/errand" prefetch={false} onClick={() => setOpen(false)} className="mt-4 rounded-none px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)]">Book an Errand</Link>
               </div>
             </div>

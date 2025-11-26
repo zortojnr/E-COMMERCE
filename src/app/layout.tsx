@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import RouteLogger from "@/components/RouteLogger";
+import FirstLaunchAlert from "@/components/FirstLaunchAlert";
 import "./globals.css";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "TribesByWendy Errands — Premium Logistics",
@@ -21,9 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} antialiased`}>
+      <body className={`antialiased`}>
         <Navbar />
         <RouteLogger />
+        <FirstLaunchAlert />
         {children}
       </body>
     </html>
