@@ -93,10 +93,15 @@ export default function TestimonialsPage() {
                     <div className="text-xs text-zinc-400">{t.type}</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 text-[color:var(--gold-end)] mb-3" aria-label={`Rating ${'rating' in t ? t.rating : 4} out of 5`}>
-                  {Array.from({ length: ('rating' in t ? t.rating : 4) }, () => '★').map((s, idx) => (<span key={idx}>{s}</span>))}
-                  {Array.from({ length: 5 - ('rating' in t ? t.rating : 4) }, () => '☆').map((s, idx) => (<span key={`e${idx}`} className="text-zinc-600">{s}</span>))}
-                </div>
+                {(() => {
+                  const ratingVal: number = (t as { rating?: number }).rating ?? 4;
+                  return (
+                    <div className="flex items-center gap-1 text-[color:var(--gold-end)] mb-3" aria-label={`Rating ${ratingVal} out of 5`}>
+                      {Array.from({ length: ratingVal }).map((_, idx) => (<span key={idx}>★</span>))}
+                      {Array.from({ length: 5 - ratingVal }).map((_, idx) => (<span key={`e${idx}`} className="text-zinc-600">☆</span>))}
+                    </div>
+                  );
+                })()}
                 <div className="text-sm text-zinc-300">{t.text}</div>
               </motion.div>
             ))}
