@@ -20,8 +20,8 @@ function FadeIn({ children }: { children: React.ReactNode }) {
 
 function LogoIcon({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="h-16 w-full max-w-[160px] bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)] rounded-lg flex items-center justify-center hover:border-[color:var(--gold-end)] transition-colors overflow-hidden">
-      <Image src={src} alt={alt} width={160} height={64} className="object-contain" unoptimized />
+    <div className="h-14 sm:h-16 w-full max-w-[160px] bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)] rounded-lg flex items-center justify-center hover:border-[color:var(--gold-end)] transition-colors overflow-hidden">
+      <Image src={src} alt={alt} width={160} height={64} sizes="(max-width: 640px) 33vw, 160px" className="object-contain" unoptimized />
     </div>
   );
 }
