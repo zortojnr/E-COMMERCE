@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description: "Affordable, fast and reliable errands and dispatch services in Port Harcourt.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
