@@ -13,7 +13,7 @@ export default function FirstLaunchAlert() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Security notice">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Security notice">
       <div className="absolute inset-0 bg-black/60 backdrop-blur" />
       <div className="relative w-[min(92vw,36rem)] max-h-[min(90dvh,36rem)] overflow-y-auto overscroll-contain rounded-2xl border border-zinc-800 bg-[#0B0B0B] p-5 sm:p-6 text-white shadow-[0_10px_40px_rgba(245,199,109,0.18)]">
         <div className="h-1 w-20 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
