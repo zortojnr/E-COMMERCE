@@ -50,18 +50,18 @@ export default function AboutPage() {
       return () => cancelAnimationFrame(raf);
     }, [end, duration]);
     const display = formatK && end >= 1000 ? `${(val / 1000).toFixed(val >= 10000 ? 0 : 1)}k${suffix}` : `${val}${suffix}`;
-    return <div ref={ref} className={`text-2xl font-extrabold`}>{display}</div>;
+    return <div ref={ref} className={`text-xl sm:text-2xl font-extrabold tabular-nums`}>{display}</div>;
   }
   return (
     <div className={`min-h-screen bg-black text-white`}>
-      <main className="mx-auto max-w-7xl px-6">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Hero Section with Image and Who We Are */}
         <section className="pt-24 md:pt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Who We Are */}
             <FadeInOnScroll>
               <div className="space-y-6">
-                <h1 className={`text-4xl md:text-5xl font-extrabold`}>Your Trusted Errands & Logistics Partner</h1>
+                <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight`}>Your Trusted Errands & Logistics Partner</h1>
                 <div className="h-1 w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
                 <div className={`text-2xl font-bold text-[color:var(--gold-end)]`}>Who we are</div>
                 <p className="text-zinc-300 leading-relaxed">TribesByWendy Errands exists to remove stress from everyday movement. We make errands simple and dependable by combining trained riders, clear communication and a premium approach to service.</p>
@@ -253,11 +253,11 @@ export default function AboutPage() {
                 { q: "Can I reschedule?", a: "Yes, contact us as early as possible to adjust your pickup window." },
               ].map((f, i) => (
                 <details key={f.q} className="group">
-                  <summary className="list-none cursor-pointer px-6 py-4 flex items-center justify-between">
-                    <span className={`font-semibold`}>{f.q}</span>
-                    <span className="w-6 h-6 rounded-full border border-[color:var(--gold-end)] grid place-items-center text-[color:var(--gold-end)] transition-transform duration-200 group-open:rotate-180">⌄</span>
+                  <summary className="list-none cursor-pointer px-4 sm:px-6 py-4 flex items-start sm:items-center justify-between gap-3 text-left">
+                    <span className={`font-semibold min-w-0 pr-2`}>{f.q}</span>
+                    <span className="w-6 h-6 shrink-0 rounded-full border border-[color:var(--gold-end)] grid place-items-center text-[color:var(--gold-end)] transition-transform duration-200 group-open:rotate-180">⌄</span>
                   </summary>
-                  <div className="px-6 pb-6 text-sm text-zinc-300">{f.a}</div>
+                  <div className="px-4 sm:px-6 pb-6 text-sm text-zinc-300">{f.a}</div>
                 </details>
               ))}
             </div>

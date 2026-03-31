@@ -71,10 +71,10 @@ export default function TestimonialsPage() {
   };
   return (
     <div className={`min-h-screen bg-black text-white`}>
-      <main className="mx-auto max-w-7xl px-6">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6">
         <section className="pt-24 md:pt-32 text-center">
           <motion.div initial="hidden" animate="show" variants={item}>
-            <h1 className={`text-4xl md:text-5xl font-extrabold`}>What Our Customers Say About Us</h1>
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight px-1`}>What Our Customers Say About Us</h1>
             <p className="mt-4 text-zinc-300">Real experiences from real users who trust TribesByWendy Errands for deliveries, errands and fast logistics in Port Harcourt.</p>
             <div className="mx-auto mt-6 h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
           </motion.div>
@@ -109,23 +109,23 @@ export default function TestimonialsPage() {
         </section>
 
         <section className="py-16">
-          <motion.div initial="hidden" animate="show" variants={item} className="rounded-2xl p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
+          <motion.div initial="hidden" animate="show" variants={item} className="rounded-2xl p-5 sm:p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
             <div className="text-3xl mb-4">“</div>
-            <div className={`text-lg md:text-xl font-semibold`}>Trusted by individuals, students and business owners, TribesByWendy Errands continues to deliver reliability, speed and peace of mind.</div>
+            <div className={`text-base sm:text-lg md:text-xl font-semibold`}>Trusted by individuals, students and business owners, TribesByWendy Errands continues to deliver reliability, speed and peace of mind.</div>
           </motion.div>
         </section>
 
         <section className="py-16">
-          <motion.div initial="hidden" animate="show" variants={item} className="rounded-2xl p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800">
-            <h2 className={`text-2xl md:text-3xl font-bold mb-6`}>Share your experience</h2>
+          <motion.div initial="hidden" animate="show" variants={item} className="rounded-2xl p-5 sm:p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800">
+            <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold mb-5 sm:mb-6`}>Share your experience</h2>
             <form onSubmit={submit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm text-zinc-300 mb-1">Name</label>
-                <input id="name" value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-white" required />
+                <input id="name" value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-base text-white" required />
               </div>
               <div>
                 <label htmlFor="portfolio" className="block text-sm text-zinc-300 mb-1">Portfolio</label>
-                <select id="portfolio" value={portfolio} onChange={(e) => setPortfolio(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-white">
+                <select id="portfolio" value={portfolio} onChange={(e) => setPortfolio(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-base text-white">
                   <option>Customer</option>
                   <option>Regular Customer</option>
                   <option>Business Owner</option>
@@ -134,23 +134,23 @@ export default function TestimonialsPage() {
               {portfolio === "Business Owner" && (
                 <div className="md:col-span-2">
                   <label htmlFor="business" className="block text-sm text-zinc-300 mb-1">Business Name</label>
-                  <input id="business" value={business} onChange={(e) => setBusiness(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-white" />
+                  <input id="business" value={business} onChange={(e) => setBusiness(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-base text-white" />
                 </div>
               )}
               <div className="md:col-span-2">
                 <label htmlFor="comment" className="block text-sm text-zinc-300 mb-1">Comment</label>
-                <textarea id="comment" value={comment} onChange={(e) => setComment(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-white h-28" required />
+                <textarea id="comment" value={comment} onChange={(e) => setComment(e.target.value)} className="w-full rounded-md bg-[#0A0A0A] border border-zinc-800 px-3 py-2 text-base text-white h-28" required />
               </div>
               <div>
                 <span className="block text-sm text-zinc-300 mb-1">Star rating</span>
-                <div role="radiogroup" aria-label="Star rating" className="flex items-center gap-2">
+                <div role="radiogroup" aria-label="Star rating" className="flex flex-wrap items-center gap-1 sm:gap-2">
                   {[1,2,3,4,5].map((n) => (
-                    <button type="button" key={n} aria-label={`${n} star${n>1?'s':''}`} onClick={() => setRating(n)} className={`text-2xl ${rating >= n ? 'text-[color:var(--gold-end)]' : 'text-zinc-600'}`}>★</button>
+                    <button type="button" key={n} aria-label={`${n} star${n>1?'s':''}`} onClick={() => setRating(n)} className={`text-2xl min-h-11 min-w-11 inline-flex items-center justify-center rounded-md ${rating >= n ? 'text-[color:var(--gold-end)]' : 'text-zinc-600'}`}>★</button>
                   ))}
                 </div>
               </div>
               <div className="md:col-span-2">
-                <button type="submit" className="rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)]">Submit Comment</button>
+                <button type="submit" className="w-full sm:w-auto rounded-full px-6 py-3 min-h-11 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)]">Submit Comment</button>
               </div>
             </form>
           </motion.div>

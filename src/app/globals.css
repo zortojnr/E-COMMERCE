@@ -20,10 +20,17 @@
   }
 }
 
-html, body { min-height: 100%; }
+html {
+  overflow-x: clip;
+  min-height: 100%;
+}
+
 body {
+  min-height: 100%;
   background: var(--brand-bg);
   color: var(--brand-text);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .shimmer {

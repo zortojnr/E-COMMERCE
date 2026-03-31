@@ -78,12 +78,12 @@ export default function ServicesPage() {
 
   return (
     <div className={`min-h-screen bg-black text-white`}>
-      <main className="mx-auto max-w-7xl px-6">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6">
         <section className="pt-24 md:pt-32">
           <FadeInOnScroll>
             <div className="text-center">
               <div className="mx-auto h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
-              <h1 className={`mt-4 text-4xl md:text-5xl font-extrabold`}>Our Services</h1>
+              <h1 className={`mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight px-1`}>Our Services</h1>
               <p className="mt-4 text-[color:var(--brand-text-muted)]">Errand services and dispatch delivery, presented in clean, professional cards.</p>
             </div>
           </FadeInOnScroll>
@@ -116,19 +116,20 @@ export default function ServicesPage() {
               {services.map((s) => (
                 <div id={s.id} key={s.id} className="rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
                   <button
+                    type="button"
                     aria-controls={`${s.id}-panel`}
                     aria-expanded={openId === s.id}
                     onClick={() => setOpenId(openId === s.id ? null : s.id)}
-                    className="w-full text-left p-6"
+                    className="w-full text-left p-4 sm:p-6"
                   >
-                    <div className="flex items-center gap-3">
-                      <span className="text-xl" aria-hidden>{s.icon}</span>
-                      <div className="flex-1">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xl shrink-0 pt-1" aria-hidden>{s.icon}</span>
+                      <div className="flex-1 min-w-0">
                         <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-3" />
-                        <div className="text-xl font-bold">{s.title}</div>
-                        <div className="text-sm text-[color:var(--brand-text-muted)]">{s.description}</div>
+                        <div className="text-lg sm:text-xl font-bold break-words">{s.title}</div>
+                        <div className="text-sm text-[color:var(--brand-text-muted)] break-words">{s.description}</div>
                       </div>
-                      <span className="ml-2 text-[color:var(--gold-end)]">{openId === s.id ? "⌄" : "›"}</span>
+                      <span className="ml-1 shrink-0 text-lg text-[color:var(--gold-end)] pt-1">{openId === s.id ? "⌄" : "›"}</span>
                     </div>
                   </button>
                   {openId === s.id && (

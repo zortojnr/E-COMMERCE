@@ -27,16 +27,16 @@ export default function Navbar() {
       }`}
       aria-label="Main Navigation"
     >
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex h-20 items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex h-[4.5rem] sm:h-20 items-center justify-between gap-2">
           {/* Logo - Left */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <Image src="/logo.jpg" alt="TribesByWendy logo" width={48} height={48} className="rounded" />
-            <div className="leading-tight">
-              <div className="font-bold tracking-tight text-white text-lg">TribesByWendy Errands</div>
-              <div className="text-xs text-[color:var(--brand-text-muted)]">THINK LOGISTICS, THINK US</div>
+          <Link href="/" prefetch={false} className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <Image src="/logo.jpg" alt="TribesByWendy logo" width={48} height={48} className="rounded w-10 h-10 sm:w-12 sm:h-12 shrink-0" />
+            <div className="leading-tight min-w-0">
+              <div className="font-bold tracking-tight text-white text-sm sm:text-base md:text-lg truncate">TribesByWendy Errands</div>
+              <div className="hidden sm:block text-xs text-[color:var(--brand-text-muted)] truncate">THINK LOGISTICS, THINK US</div>
             </div>
-          </div>
+          </Link>
           
           {/* Navigation - Center */}
           <nav className="hidden md:flex items-center gap-8 text-sm text-white mx-auto">
@@ -164,7 +164,7 @@ function MobileMenu() {
             <button onClick={() => setOpen(false)} className="rounded-md p-2 border border-zinc-800 text-white">✕</button>
           </div>
           <div className="flex h-full items-center justify-center">
-            <div id="mobile-menu" ref={panelRef} tabIndex={-1} className="rounded-2xl p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 w-[90%] max-w-sm" onClick={(e) => e.stopPropagation()}>
+            <div id="mobile-menu" ref={panelRef} tabIndex={-1} className="rounded-2xl p-6 sm:p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 w-[min(100%,24rem)] max-h-[85vh] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
               <div className="flex items-center gap-3 mb-4">
                 <Image src="/logo.jpg" alt="TribesByWendy logo" width={36} height={36} className="rounded" />
                 <div className="leading-tight">

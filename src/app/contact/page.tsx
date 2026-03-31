@@ -12,16 +12,16 @@ export default function ContactPage() {
   const isProd = process.env.NODE_ENV === "production";
   return (
     <div className={`min-h-screen bg-black text-white`}>
-      <main className="mx-auto max-w-7xl px-6">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6">
         <section className="pt-24 md:pt-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
-            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="space-y-6">
-              <h1 className={`text-4xl md:text-5xl font-extrabold leading-tight`}>Get in Touch With Us</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-10">
+            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="space-y-4 sm:space-y-6">
+              <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight`}>Get in Touch With Us</h1>
               <div className="h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
               <p className="max-w-xl text-zinc-300">Reliable support for errands and dispatch, available in Port Harcourt.</p>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.4 }} className="rounded-xl overflow-hidden bg-[#0A0A0A] border border-[color:rgba(212,167,56,0.40)] hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full md:w-[420px] md:h-[420px]">
-              <Image src="/wendy3.jpg" alt="Contact visual" width={1200} height={900} sizes="(min-width: 1024px) 50vw, (min-width: 640px) 100vw, 100vw" unoptimized={!isProd} className="w-full h-full object-cover" />
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.4 }} className="rounded-xl overflow-hidden bg-[#0A0A0A] border border-[color:rgba(212,167,56,0.40)] hover:shadow-[0_0_40px_rgba(245,199,109,0.25)] w-full max-w-md mx-auto md:mx-0 md:max-w-none aspect-[4/3] md:aspect-auto md:w-[420px] md:h-[420px] md:shrink-0">
+              <Image src="/wendy3.jpg" alt="Contact visual" width={1200} height={900} sizes="(min-width: 768px) 420px, (min-width: 640px) 90vw, 100vw" unoptimized={!isProd} className="w-full h-full object-cover min-h-[200px] md:min-h-0" />
             </motion.div>
           </div>
         </section>
@@ -89,11 +89,11 @@ export default function ContactPage() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
             <div className={`text-xl font-bold mb-4`}>Send a Message</div>
             <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Name" />
-              <input className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Email" type="email" />
-              <input className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Phone" />
-              <textarea className="md:col-span-2 rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white" placeholder="Message" rows={4} />
-              <button type="button" className="md:col-span-2 rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Send Message</button>
+              <input className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white" placeholder="Name" />
+              <input className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white" placeholder="Email" type="email" />
+              <input className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white" placeholder="Phone" />
+              <textarea className="md:col-span-2 rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white" placeholder="Message" rows={4} />
+              <button type="button" className="md:col-span-2 rounded-xl px-6 py-3 min-h-11 w-full sm:w-auto justify-self-stretch sm:justify-self-start text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Send Message</button>
             </form>
           </motion.div>
         </section>

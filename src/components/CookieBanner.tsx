@@ -33,10 +33,10 @@ export default function CookieBanner() {
   };
   if (!show) return null;
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 p-4">
-      <div className="mx-auto max-w-7xl bg-[rgba(20,20,20,0.85)] border border-[color:var(--brand-border)] text-[color:var(--brand-text)] p-4 md:p-6">
+    <div className="fixed inset-x-0 bottom-0 z-50 p-3 sm:p-4 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <div className="mx-auto max-w-7xl bg-[rgba(20,20,20,0.85)] border border-[color:var(--brand-border)] text-[color:var(--brand-text)] p-4 md:p-6 max-h-[45vh] sm:max-h-none overflow-y-auto">
         <div className="md:flex md:items-center md:justify-between gap-4">
-          <div className="text-sm text-[color:var(--brand-text-muted)]">
+          <div className="text-xs sm:text-sm text-[color:var(--brand-text-muted)] min-w-0">
             We use cookies to improve your experience. See our
             {" "}
             <a href="/privacy" className="underline text-[color:var(--gold-end)]">
@@ -44,16 +44,18 @@ export default function CookieBanner() {
             </a>
             {" "}or customize preferences.
           </div>
-          <div className="mt-3 md:mt-0 flex gap-3">
+          <div className="mt-3 md:mt-0 flex flex-wrap gap-2 sm:gap-3 shrink-0">
             <button
+              type="button"
               onClick={() => setPrefOpen(true)}
-              className="rounded-none px-4 py-2 text-[color:var(--gold-end)] border border-[color:var(--gold-end)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)]"
+              className="rounded-none px-3 sm:px-4 py-2 text-sm text-[color:var(--gold-end)] border border-[color:var(--gold-end)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] min-h-11"
             >
               Preferences
             </button>
             <button
+              type="button"
               onClick={acceptAll}
-              className="rounded-none px-4 py-2 text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_20px_var(--brand-glow)]"
+              className="rounded-none px-3 sm:px-4 py-2 text-sm text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_20px_var(--brand-glow)] min-h-11"
             >
               Accept
             </button>

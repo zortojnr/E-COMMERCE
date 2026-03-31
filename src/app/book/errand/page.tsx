@@ -26,7 +26,7 @@ export default function BookErrandPage() {
 
   return (
     <div className={`min-h-screen bg-black text-white`}>
-      <main className="mx-auto max-w-7xl px-6 py-24">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 py-20 sm:py-24 pb-[max(5rem,env(safe-area-inset-bottom))]">
         <motion.div initial="hidden" animate="show" variants={item} className="mb-8">
           <h1 className={`text-3xl md:text-4xl font-extrabold`}>Book an Errand</h1>
           <p className="mt-2 text-zinc-300">Schedule a professional errand with premium support.</p>
@@ -43,12 +43,12 @@ export default function BookErrandPage() {
             <div className={`text-xl font-bold mb-4`}>Details</div>
             <div className="grid grid-cols-1 gap-4">
               <label className="text-sm text-zinc-400">Errand task <span className="text-[color:var(--gold-end)]">*</span></label>
-              <input value={task} onChange={(e)=>setTask(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. bank deposit, grocery run" />
+              <input value={task} onChange={(e)=>setTask(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. bank deposit, grocery run" />
               <label className="text-sm text-zinc-400">Notes</label>
-              <textarea value={notes} onChange={(e)=>setNotes(e.target.value)} rows={3} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Optional instructions" />
+              <textarea value={notes} onChange={(e)=>setNotes(e.target.value)} rows={3} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Optional instructions" />
             </div>
-            <div className="mt-6 flex gap-3">
-              <button onClick={next} disabled={!valid1} className={`rounded-xl px-6 py-3 ${!valid1 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Next</button>
+            <div className="mt-6 flex flex-col-reverse sm:flex-row flex-wrap gap-3">
+              <button type="button" onClick={next} disabled={!valid1} className={`rounded-xl px-6 py-3 min-h-11 w-full sm:w-auto ${!valid1 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Next</button>
             </div>
           </motion.div>
         )}
@@ -59,20 +59,20 @@ export default function BookErrandPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Location <span className="text-[color:var(--gold-end)]">*</span></label>
-                <input value={location} onChange={(e)=>setLocation(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Address & landmark" />
+                <input value={location} onChange={(e)=>setLocation(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Address & landmark" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Preferred date <span className="text-[color:var(--gold-end)]">*</span></label>
-                <input value={date} onChange={(e)=>setDate(e.target.value)} type="date" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white focus:outline-none focus:border-[color:var(--gold-end)]" />
+                <input value={date} onChange={(e)=>setDate(e.target.value)} type="date" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white focus:outline-none focus:border-[color:var(--gold-end)]" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Preferred time <span className="text-[color:var(--gold-end)]">*</span></label>
-                <input value={time} onChange={(e)=>setTime(e.target.value)} type="time" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white focus:outline-none focus:border-[color:var(--gold-end)]" />
+                <input value={time} onChange={(e)=>setTime(e.target.value)} type="time" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white focus:outline-none focus:border-[color:var(--gold-end)]" />
               </div>
             </div>
-            <div className="mt-6 flex gap-3">
-              <button onClick={prev} className="rounded-xl px-6 py-3 border border-[color:var(--gold-end)] text-[color:var(--gold-end)]">Back</button>
-              <button onClick={next} disabled={!valid2} className={`rounded-xl px-6 py-3 ${!valid2 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Next</button>
+            <div className="mt-6 flex flex-col-reverse sm:flex-row flex-wrap gap-3">
+              <button type="button" onClick={prev} className="rounded-xl px-6 py-3 min-h-11 w-full sm:w-auto border border-[color:var(--gold-end)] text-[color:var(--gold-end)]">Back</button>
+              <button type="button" onClick={next} disabled={!valid2} className={`rounded-xl px-6 py-3 min-h-11 w-full sm:w-auto ${!valid2 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Next</button>
             </div>
           </motion.div>
         )}
@@ -83,15 +83,15 @@ export default function BookErrandPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Name <span className="text-[color:var(--gold-end)]">*</span></label>
-                <input value={name} onChange={(e)=>setName(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Your full name" />
+                <input value={name} onChange={(e)=>setName(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Your full name" />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-zinc-400">Phone <span className="text-[color:var(--gold-end)]">*</span></label>
-                <input value={phone} onChange={(e)=>setPhone(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. 0803 842 9173" />
+                <input value={phone} onChange={(e)=>setPhone(e.target.value)} className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="e.g. 0803 842 9173" />
               </div>
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label className="text-sm text-zinc-400">Email</label>
-                <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Optional" />
+                <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-3 text-base text-white placeholder:text-zinc-500 focus:outline-none focus:border-[color:var(--gold-end)]" placeholder="Optional" />
               </div>
             </div>
             <div className="rounded-md bg-[#0A0A0A] border border-zinc-800 p-4 text-zinc-300">
@@ -100,9 +100,9 @@ export default function BookErrandPage() {
               <div><span className="font-semibold">Location:</span> {location || "—"}</div>
               <div><span className="font-semibold">Schedule:</span> {date || "—"} {time || ""}</div>
             </div>
-            <div className="mt-6 flex gap-3">
-              <button onClick={prev} className="rounded-xl px-6 py-3 border border-[color:var(--gold-end)] text-[color:var(--gold-end)]">Back</button>
-              <button onClick={submit} disabled={!valid3} className={`rounded-xl px-6 py-3 ${!valid3 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Confirm & WhatsApp</button>
+            <div className="mt-6 flex flex-col-reverse sm:flex-row flex-wrap gap-3">
+              <button type="button" onClick={prev} className="rounded-xl px-6 py-3 min-h-11 w-full sm:w-auto border border-[color:var(--gold-end)] text-[color:var(--gold-end)]">Back</button>
+              <button type="button" onClick={submit} disabled={!valid3} className={`rounded-xl px-6 py-3 min-h-11 w-full sm:w-auto ${!valid3 ? 'opacity-50 cursor-not-allowed' : ''} text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]`}>Confirm & WhatsApp</button>
             </div>
           </motion.div>
         )}
