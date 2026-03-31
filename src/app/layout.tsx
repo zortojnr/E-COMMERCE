@@ -8,6 +8,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "TribesByWendy Errands — Premium Logistics",
   description: "Affordable, fast and reliable errands and dispatch services in Port Harcourt.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/logo.jpg",
+  },
 };
 
 export const viewport = {
