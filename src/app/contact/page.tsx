@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } };
 const item = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } };
 
+const EMAIL = "tribesbywendyerrands@gmail.com";
+
 export default function ContactPage() {
   const isProd = process.env.NODE_ENV === "production";
   return (
@@ -53,7 +55,20 @@ export default function ContactPage() {
               </div>
               <div className="text-zinc-300">@Tribesbywendyerrands</div>
             </motion.a>
-            
+            <motion.div variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-full bg-black border border-[color:var(--gold-end)] grid place-items-center">
+                  <svg aria-hidden className="w-4 h-4 text-[color:var(--gold-end)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div className={`font-semibold`}>Email</div>
+              </div>
+              <div className="space-y-2 text-zinc-300">
+                <a href={`mailto:${EMAIL}`} className="block underline underline-offset-4 break-all">{EMAIL}</a>
+              </div>
+            </motion.div>
           </motion.div>
         </section>
 
@@ -108,6 +123,7 @@ export default function ContactPage() {
                   <div className={`font-semibold mb-3`}>Contact</div>
                   <div className="text-sm text-zinc-300">+234 807 871 2534</div>
                   <div className="text-sm text-zinc-300">0803 842 9173</div>
+                  <a href={`mailto:${EMAIL}`} className="text-sm text-zinc-300 underline underline-offset-4 block break-all">{EMAIL}</a>
                   <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
                 </div>
                 <div>

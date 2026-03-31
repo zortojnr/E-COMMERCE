@@ -18,14 +18,6 @@ function FadeIn({ children }: { children: React.ReactNode }) {
   return <div ref={ref} className={`transition-all duration-1000 ${v ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>{children}</div>;
 }
 
-function LogoIcon({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="h-14 sm:h-16 w-full max-w-[160px] bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)] rounded-lg flex items-center justify-center hover:border-[color:var(--gold-end)] transition-colors overflow-hidden">
-      <Image src={src} alt={alt} width={160} height={64} sizes="(max-width: 640px) 33vw, 160px" className="object-contain" unoptimized />
-    </div>
-  );
-}
-
 function CountUp({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
   const [val, setVal] = useState(0);
   useEffect(() => {
@@ -185,34 +177,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Partner/Client Logo Row */}
-      <section className="py-16 bg-black">
-        <div className="mx-auto max-w-7xl px-6">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h3 className="text-lg font-semibold text-[color:var(--brand-text-muted)] mb-8">
-                Trusted by Businesses Across Port Harcourt
-              </h3>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-80 hover:opacity-100 transition-opacity duration-500">
-              {[
-                { src: "/1.png", alt: "Partner 1" },
-                { src: "/2.jpg", alt: "Partner 2" },
-                { src: "/3.png", alt: "Partner 3" },
-                { src: "/4.png", alt: "Partner 4" },
-              ].map((l, i) => (
-                <div key={i} className="flex items-center justify-center">
-                  <LogoIcon src={l.src} alt={l.alt} />
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-center text-sm text-[color:var(--brand-text-muted)]">
-              We only help our customers do interstate deliveries using these businesses. If you can’t go to the park, we can pick up and waybill for you.
-            </p>
           </FadeIn>
         </div>
       </section>
