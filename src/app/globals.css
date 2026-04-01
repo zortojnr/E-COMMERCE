@@ -49,3 +49,27 @@ body {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+
+@keyframes announcementMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.announcement-ticker-track {
+  animation: announcementMarquee 45s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-ticker-track {
+    animation: none;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

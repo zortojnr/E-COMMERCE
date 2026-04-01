@@ -48,14 +48,14 @@ export default function CookieBanner() {
             <button
               type="button"
               onClick={() => setPrefOpen(true)}
-              className="rounded-none px-3 sm:px-4 py-2 text-sm text-[color:var(--gold-end)] border border-[color:var(--gold-end)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] min-h-11"
+              className="rounded-lg px-3 sm:px-4 py-2 text-sm text-[color:var(--gold-end)] border border-[color:var(--gold-end)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] min-h-11"
             >
               Preferences
             </button>
             <button
               type="button"
               onClick={acceptAll}
-              className="rounded-none px-3 sm:px-4 py-2 text-sm text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_20px_var(--brand-glow)] min-h-11"
+              className="rounded-lg px-3 sm:px-4 py-2 text-sm text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_20px_var(--brand-glow)] min-h-11"
             >
               Accept
             </button>
@@ -96,13 +96,13 @@ export default function CookieBanner() {
               <div className="mt-4 flex gap-3 justify-end">
                 <button
                   onClick={() => setPrefOpen(false)}
-                  className="rounded-none px-4 py-2 text-[color:var(--gold-end)] border border-[color:var(--gold-end)]"
+                  className="rounded-lg px-4 py-2 text-[color:var(--gold-end)] border border-[color:var(--gold-end)]"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={savePrefs}
-                  className="rounded-none px-4 py-2 text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]"
+                  className="rounded-lg px-4 py-2 text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]"
                 >
                   Save
                 </button>

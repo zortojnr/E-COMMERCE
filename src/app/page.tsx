@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[color:var(--brand-bg)] text-[color:var(--brand-text)]">
       {/* Hero Section with Faded Background */}
-      <section className="relative pt-28 pb-12 sm:pt-32 sm:pb-20 overflow-hidden">
+      <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0B0B0B] to-[#111] opacity-90"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,167,56,0.1),transparent_50%)]"></div>
         
@@ -51,37 +51,43 @@ export default function Home() {
               <div className="space-y-6 sm:space-y-8 text-center max-w-3xl mx-auto">
                 <div className="inline-flex items-center justify-center max-w-[95vw] bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)] px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full">
                   <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full mr-2 animate-pulse shrink-0"></span>
-                  Premium Logistics Solutions
+                  Company profile
                 </div>
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] sm:leading-tight text-[color:var(--brand-text)] px-1">
-                  Reliable Logistics
+                  Reliable logistics,
                   <span className="block text-transparent bg-clip-text bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]">
-                    Built for Speed
+                    delivered with purpose
                   </span>
                 </h1>
-                <p className="text-base sm:text-xl text-[color:var(--brand-text-muted)] max-w-2xl mx-auto px-1">
-                  End-to-end logistics services focused on dependable movement, on-time delivery and professional handling across Port Harcourt and beyond.
+                <p className="text-base sm:text-xl text-[color:var(--brand-text-muted)] max-w-2xl mx-auto px-1 font-medium sm:font-normal">
+                  Port Harcourt&apos;s trusted partner for fast, professional, and dependable delivery.
                 </p>
-                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 justify-center items-stretch sm:items-center px-2">
-                  <Link prefetch={false} href="/book/pickup" className="text-center rounded-full px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_8px_30px_var(--brand-glow)] transition-all duration-300 hover:shadow-[0_10px_40px_var(--brand-glow-hover)] sm:hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] active:opacity-90">
-                    Book a Pickup
+                <p className="text-sm sm:text-base text-[color:var(--brand-text-muted)] max-w-2xl mx-auto px-1">
+                  End to end logistics for businesses and individuals, with clear communication and accountable teams.
+                </p>
+                <div className="text-sm sm:text-base text-[color:var(--brand-text-muted)]">
+                  View{" "}
+                  <Link prefetch={false} href="/pricing" className="text-[color:var(--gold-end)] underline underline-offset-4 hover:opacity-90">
+                    pricing
+                  </Link>{" "}
+                  or{" "}
+                  <Link prefetch={false} href="/contact" className="text-[color:var(--gold-end)] underline underline-offset-4 hover:opacity-90">
+                    contact us
                   </Link>
-                  <Link prefetch={false} href="/contact" className="text-center rounded-full px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-[color:var(--gold-end)] border-2 border-[color:var(--gold-end)] transition-all duration-300 hover:bg-[color:rgba(245,199,109,0.1)] sm:hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] active:opacity-90">
-                    Contact Sales
-                  </Link>
+                  .
                 </div>
                 <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 sm:pt-6">
                   <div className="bg-black/70 backdrop-blur rounded-lg sm:rounded-xl p-2 sm:p-4 text-center">
                     <CountUp end={99} suffix="%" />
-                    <div className="text-[10px] sm:text-xs text-[color:var(--brand-text-muted)] mt-1 leading-tight">On-time Delivery</div>
+                    <div className="text-[10px] sm:text-xs text-[color:var(--brand-text-muted)] mt-1 leading-tight">On time delivery rate</div>
                   </div>
                   <div className="bg-black/70 backdrop-blur rounded-lg sm:rounded-xl p-2 sm:p-4 text-center">
                     <CountUp end={120} suffix="+" />
-                    <div className="text-[10px] sm:text-xs text-[color:var(--brand-text-muted)] mt-1 leading-tight">Service Routes</div>
+                    <div className="text-[10px] sm:text-xs text-[color:var(--brand-text-muted)] mt-1 leading-tight">Multiple service routes</div>
                   </div>
                   <div className="bg-black/70 backdrop-blur rounded-lg sm:rounded-xl p-2 sm:p-4 text-center">
                     <CountUp end={500} suffix="+" />
-                    <div className="text-[10px] sm:text-xs text-[color:var(--brand-text-muted)] mt-1 leading-tight">Happy Customers</div>
+                    <div className="text-[10px] sm:text-xs text-[color:var(--brand-text-muted)] mt-1 leading-tight">Growing happy customers</div>
                   </div>
                 </div>
               </div>
@@ -121,7 +127,7 @@ export default function Home() {
                   <ul className="space-y-3 text-sm text-[color:var(--brand-text-muted)]">
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
-                      Same-day delivery service
+                      Same day delivery service
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
@@ -129,7 +135,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
-                      Real-time tracking updates
+                      Real time tracking updates
                     </li>
                   </ul>
                   <Link href="/services" className="inline-flex items-center gap-2 mt-6 text-[color:var(--gold-end)] hover:text-[color:var(--gold-start)] transition-colors font-semibold">
@@ -161,7 +167,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
-                      Secure packaging & handling
+                      Secure packaging and handling
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
@@ -204,12 +210,21 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-[color:var(--brand-text)] mb-4">Reliable Service</h3>
                 <p className="text-[color:var(--brand-text-muted)] mb-6">
-                  Consistent, dependable logistics with professional handling and real-time tracking.
+                  Consistent, dependable logistics with professional handling and real time tracking.
                 </p>
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
-                  <li>• 99% on-time delivery rate</li>
-                  <li>• Professional handling protocols</li>
-                  <li>• Real-time tracking updates</li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>99% on time delivery rate</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Professional handling protocols</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Real time tracking updates</span>
+                  </li>
                 </ul>
               </div>
               
@@ -223,9 +238,18 @@ export default function Home() {
                   Competitive rates with transparent pricing and no hidden fees for all logistics services.
                 </p>
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
-                  <li>• Transparent ₦ pricing</li>
-                  <li>• No hidden fees</li>
-                  <li>• Volume discounts available</li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Transparent pricing in naira</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>No hidden fees</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Volume discounts available</span>
+                  </li>
                 </ul>
               </div>
               
@@ -241,9 +265,18 @@ export default function Home() {
                   Deep knowledge of Port Harcourt routes and logistics network for efficient delivery.
                 </p>
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
-                  <li>• Port Harcourt area specialists</li>
-                  <li>• Optimized route planning</li>
-                  <li>• Local network partnerships</li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Port Harcourt area specialists</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Optimized route planning</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
+                    <span>Local network partnerships</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -259,16 +292,15 @@ export default function Home() {
               Ready to Streamline Your Logistics?
             </h2>
             <p className="text-base sm:text-xl text-[color:var(--brand-text-muted)] mb-6 sm:mb-8 max-w-2xl mx-auto px-1">
-              Book a pickup in minutes. We'll handle the route and the stress while you focus on growing your business.
+              Request a delivery in minutes. We will handle the route and coordination while you focus on growing your business.
             </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 justify-center items-stretch sm:items-center px-2">
-              <Link prefetch={false} href="/book/pickup" className="text-center rounded-full px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-black bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_8px_30px_var(--brand-glow)] transition-all duration-300 hover:shadow-[0_10px_40px_var(--brand-glow-hover)] sm:hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] active:opacity-90">
-                Book a Pickup
+            <p className="text-sm sm:text-base text-[color:var(--brand-text-muted)]">
+              For pricing and delivery requests, please use our official channels on the{" "}
+              <Link prefetch={false} href="/contact" className="text-[color:var(--gold-end)] underline underline-offset-4 hover:opacity-90">
+                contact page
               </Link>
-              <Link prefetch={false} href="/contact" className="text-center rounded-full px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-[color:var(--gold-end)] border-2 border-[color:var(--gold-end)] transition-all duration-300 hover:bg-[color:rgba(245,199,109,0.1)] sm:hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold-end)] active:opacity-90">
-                Get a Quote
-              </Link>
-            </div>
+              .
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -294,27 +326,30 @@ export default function Home() {
               <div>
                 <h4 className="font-semibold text-white mb-4">Services</h4>
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
-                  <li><Link href="/services" className="hover:text-[color:var(--gold-end)] transition-colors">Errand Logistics</Link></li>
-                  <li><Link href="/services" className="hover:text-[color:var(--gold-end)] transition-colors">Dispatch Delivery</Link></li>
-                  <li><Link href="/services" className="hover:text-[color:var(--gold-end)] transition-colors">Enterprise Logistics</Link></li>
-                  <li><Link href="/services" className="hover:text-[color:var(--gold-end)] transition-colors">International Forwarding</Link></li>
+                  <li><Link href="/services" className="hover:text-[color:var(--gold-end)] transition-colors">Errand logistics</Link></li>
+                  <li><Link href="/services" className="hover:text-[color:var(--gold-end)] transition-colors">Dispatch delivery</Link></li>
+                  <li><Link href="/pricing" className="hover:text-[color:var(--gold-end)] transition-colors">Pricing</Link></li>
+                  <li><Link href="/contact" className="hover:text-[color:var(--gold-end)] transition-colors">Get in touch</Link></li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="font-semibold text-white mb-4">Contact</h4>
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
-                  <li>+234 807 871 2534</li>
-                  <li>0803 842 9173</li>
+                  <li>08157116337</li>
+                  <li>08038429173</li>
                   <li>@Tribesbywendyerrands</li>
                   <li>No. 6, Mission Road, Alakahia</li>
                 </ul>
               </div>
             </div>
             
-            <div className="border-t border-[color:var(--brand-border)] mt-12 pt-8 text-center">
+            <div className="border-t border-[color:var(--brand-border)] mt-12 pt-8 text-center space-y-3">
+              <p className="text-xs sm:text-sm text-[color:var(--brand-text-muted)] max-w-2xl mx-auto px-2">
+                Please arrange all deliveries through our official channels. We do not authorize customers to contact drivers directly for service requests.
+              </p>
               <p className="text-sm text-[color:var(--brand-text-muted)]">
-                © 2024 TribesByWendy Errands. All rights reserved.
+                © 2026 TribesByWendy Errands. All rights reserved.
               </p>
             </div>
           </FadeIn>

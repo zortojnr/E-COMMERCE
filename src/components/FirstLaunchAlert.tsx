@@ -23,7 +23,7 @@ export default function FirstLaunchAlert() {
         </p>
         <ul className="list-disc list-inside text-sm text-zinc-300 space-y-1 mb-4">
           <li>Do not share sensitive codes or private information.</li>
-          <li>Confirm pickup and drop-off details via official channels.</li>
+          <li>Confirm pickup and drop off details via official channels.</li>
           <li>Report suspicious behavior immediately.</li>
         </ul>
         <div className="flex justify-end">

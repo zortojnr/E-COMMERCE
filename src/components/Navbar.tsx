@@ -29,7 +29,7 @@ export default function Navbar() {
       aria-label="Main Navigation"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex h-[4.5rem] sm:h-20 items-center justify-between gap-2">
+        <div className="flex h-[4.5rem] sm:h-20 items-center gap-2">
           {/* Logo - Left */}
           <Link href="/" prefetch={false} className="flex items-center gap-2 sm:gap-3 min-w-0">
             <Image src="/logo.jpg" alt="TribesByWendy logo" width={48} height={48} className="rounded w-10 h-10 sm:w-12 sm:h-12 shrink-0" />
@@ -40,7 +40,7 @@ export default function Navbar() {
           </Link>
           
           {/* Navigation - Center */}
-          <nav className="hidden md:flex items-center gap-8 text-sm text-white mx-auto">
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-8 text-sm text-white">
             <Link href="/" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Home</Link>
             <Link href="/about" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">About Us</Link>
             <div
@@ -66,12 +66,10 @@ export default function Navbar() {
                   className="absolute left-0 mt-3 w-64 rounded-2xl bg-[rgba(20,20,20,0.85)] border border-zinc-800 shadow-lg p-2"
                 >
                   {[
-                    { href: "/services#errand", label: "Errand Services" },
-                    { href: "/services#dispatch", label: "Dispatch Delivery" },
-                    { href: "/services#same-day", label: "Same day delivery" },
-                    { href: "/services#door-to-door", label: "Door to door delivery" },
-                    { href: "/services#payment-on-delivery", label: "Payment on delivery" },
-                    { href: "/services#warehousing", label: "Warehousing" },
+                    { href: "/services#errand", label: "Errand logistics" },
+                    { href: "/services#dispatch", label: "Dispatch delivery" },
+                    { href: "/services#enterprise", label: "Enterprise logistics" },
+                    { href: "/services#international", label: "International forwarding" },
                   ].map((item) => (
                     <Link
                       key={item.href}
@@ -86,16 +84,12 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            <Link href="/pricing" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Pricing</Link>
             <Link href="/testimonials" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Testimonials</Link>
             <Link href="/contact" prefetch={false} className="hover:text-[color:var(--gold-end)] transition-colors">Contact Us</Link>
           </nav>
           
-          {/* Action Button - Right */}
-          <div className="hidden md:block flex-shrink-0">
-            <Link href="/book/errand" prefetch={false} className="rounded-full px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)] hover:scale-105">
-              Book an Errand
-            </Link>
-          </div>
+          <div className="hidden md:block w-[12rem]" aria-hidden />
           <div className="md:hidden ml-auto">
             <MobileMenu />
           </div>
@@ -198,19 +192,14 @@ function MobileMenu() {
                   <Link href="/services" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4 py-1">
                     Services
                   </Link>
+                  <Link href="/pricing" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4 py-1">
+                    Pricing
+                  </Link>
                   <Link href="/testimonials" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4 py-1">
                     Testimonials
                   </Link>
                   <Link href="/contact" prefetch={false} onClick={() => setOpen(false)} className="hover:underline underline-offset-4 py-1">
                     Contact Us
-                  </Link>
-                  <Link
-                    href="/book/errand"
-                    prefetch={false}
-                    onClick={() => setOpen(false)}
-                    className="mt-4 rounded-none px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)]"
-                  >
-                    Book an Errand
                   </Link>
                 </div>
               </div>

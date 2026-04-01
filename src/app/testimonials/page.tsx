@@ -26,14 +26,14 @@ export default function TestimonialsPage() {
       name: "Phone Delivery Service Customer",
       type: "Regular Delivery User",
       text:
-        "Excited and impressed! I’ve used their service for multiple deliveries across Port Harcourt, one thing that always stands out is the unbelievably low pricing. Fast, friendly and extremely reliable, they make every delivery stress-free.",
+        "Excited and impressed! I have used their service for multiple deliveries across Port Harcourt, one thing that always stands out is the unbelievably low pricing. Fast, friendly and extremely reliable, they make every delivery stress free.",
       avatar: avatars[0],
     },
     {
       name: "Koks",
       type: "Regular Customer",
       text:
-        "Their speed is unmatched. Every delivery comes quicker than expected, and the drivers’ accountability is top-tier. Safe, reliable and always available when needed, they’re my go-to brand for everything errands and delivery.",
+        "Their speed is unmatched. Every delivery comes quicker than expected, and the driver accountability is top tier. Safe, reliable and always available when needed, they are my preferred brand for errands and delivery.",
       avatar: avatars[1],
     },
     {
@@ -51,7 +51,7 @@ export default function TestimonialsPage() {
       avatar: avatars[3],
     },
     { name: "Chinedu", type: "Customer", text: "Delivery was slow and the rider was not courteous.", avatar: avatars[0], rating: 1 },
-    { name: "Amaka", type: "Customer", text: "Affordable and stress-free moving.", avatar: avatars[1] },
+    { name: "Amaka", type: "Customer", text: "Affordable and stress free moving.", avatar: avatars[1] },
     { name: "Timi", type: "Customer", text: "Rider was rude and delivery arrived late.", avatar: avatars[2], rating: 1 },
     { name: "Blessing", type: "Customer", text: "Friendly support, clear updates and timely delivery.", avatar: avatars[3] },
     { name: "David", type: "Customer", text: "Professional handling and great pricing for repeat orders, but the rider was slow.", avatar: avatars[0], rating: 3 },
@@ -65,14 +65,14 @@ export default function TestimonialsPage() {
   const submit = (e: any) => {
     e.preventDefault();
     if (!name || !comment) return;
-    const type = portfolio === "Business Owner" && business ? `Business Owner — ${business}` : portfolio;
+    const type = portfolio === "Business Owner" && business ? `Business Owner, ${business}` : portfolio;
     setReviews((r) => [{ name, type, text: comment, avatar: avatars[(r.length) % avatars.length], rating }, ...r]);
     setName(""); setBusiness(""); setComment(""); setRating(5); setPortfolio("Customer");
   };
   return (
     <div className={`min-h-screen bg-black text-white`}>
       <main className="mx-auto max-w-7xl px-4 sm:px-6">
-        <section className="pt-24 md:pt-32 text-center">
+        <section className="pt-6 md:pt-10 text-center">
           <motion.div initial="hidden" animate="show" variants={item}>
             <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight px-1`}>What Our Customers Say About Us</h1>
             <p className="mt-4 text-zinc-300">Real experiences from real users who trust TribesByWendy Errands for deliveries, errands and fast logistics in Port Harcourt.</p>
@@ -83,7 +83,7 @@ export default function TestimonialsPage() {
         <section className="py-16">
           <motion.div initial="hidden" animate="show" variants={container} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[...baseList, ...reviews].map((t, i) => (
-              <motion.div key={i} variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.18)] hover:scale-[1.02]">
+              <motion.div key={i} variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-colors duration-200">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
                     <Image src={t.avatar} alt={t.name} width={40} height={40} sizes="40px" unoptimized={!isProd} className="object-cover" />
@@ -160,8 +160,7 @@ export default function TestimonialsPage() {
           <motion.div initial="hidden" animate="show" variants={item} className="relative overflow-hidden rounded-2xl bg-[#0B0B0B] border border-zinc-800">
             <div className="p-8 md:p-12">
               <div className={`text-2xl md:text-3xl font-extrabold`}>Experience premium errands & logistics service.</div>
-              <div className="mt-2 text-sm md:text-base text-zinc-300">Fast. Reliable. Affordable. Every time.</div>
-              <a href="/book/errand" className="mt-6 inline-block rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_rgba(245,199,109,0.25)] transition-all duration-200 hover:shadow-[0_10px_40px_rgba(245,199,109,0.35)]">Book a Service Now</a>
+              <div className="mt-2 text-sm md:text-base text-zinc-300">Fast, reliable, and affordable, every time.</div>
             </div>
           </motion.div>
         </section>
@@ -179,8 +178,8 @@ export default function TestimonialsPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
                   <div className={`font-semibold mb-3`}>Contact</div>
-                  <div className="text-sm text-zinc-300">+234 807 871 2534</div>
-                  <div className="text-sm text-zinc-300">0803 842 9173</div>
+                  <div className="text-sm text-zinc-300">08157116337</div>
+                  <div className="text-sm text-zinc-300">08038429173</div>
                   <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
                 </div>
                 <div>
@@ -189,7 +188,7 @@ export default function TestimonialsPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2026 TribesByWendy Errands. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

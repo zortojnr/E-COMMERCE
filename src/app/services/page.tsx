@@ -25,7 +25,6 @@ function FadeInOnScroll({ children }: { children: React.ReactNode }) {
 
 export default function ServicesPage() {
   const [openId, setOpenId] = useState<string | null>(null);
-  const isProd = process.env.NODE_ENV === "production";
   useEffect(() => {
     const hash = typeof window !== "undefined" ? window.location.hash.replace("#", "") : "";
     if (hash) setOpenId(hash);
@@ -34,57 +33,67 @@ export default function ServicesPage() {
   const services = [
     {
       id: "errand",
-      title: "Errand Services",
-      description: "Simplifying everyday tasks with fast, dependable errands for individuals and small businesses.",
-      features: ["Quick booking", "Real-time updates", "Secure item handling"],
+      title: "Errand logistics",
+      description:
+        "Let us handle the daily runs so you can focus on what matters most. Whether it is collecting documents, dropping off packages, or managing routine tasks across the city, our errand service is fast, trackable, and stress free.",
+      features: [
+        "Same day delivery available",
+        "Documents and packages handled with care",
+        "Real time tracking updates",
+        "Ideal for individuals and small businesses",
+      ],
       icon: "🧾",
     },
     {
       id: "dispatch",
-      title: "Dispatch Delivery",
-      description: "Secure and efficient parcel movement with trained riders and careful handling.",
-      features: ["City-wide coverage", "Verified handoff", "Affordable pricing"],
+      title: "Dispatch delivery",
+      description:
+        "Speed meets security. Our dispatch service is designed for businesses and individuals who need parcels moved quickly while maintaining careful handling and accountability.",
+      features: [
+        "Express and scheduled delivery options",
+        "Secure packaging and professional handling",
+        "Signature confirmation on delivery",
+        "Suitable for e commerce, retail, and corporate clients",
+      ],
       icon: "📦",
     },
     {
-      id: "same-day",
-      title: "Same day delivery",
-      description: "Pickup and deliver on the same day with clear communication and timing.",
-      features: ["1–3 hour window", "Priority routing", "Status alerts"],
-      icon: "⚡",
+      id: "enterprise",
+      title: "Enterprise logistics",
+      description:
+        "For businesses with high volume delivery needs, we offer scalable logistics solutions tailored to your operations. We work closely with enterprise clients to create efficient, consistent delivery workflows.",
+      features: [
+        "Volume based pricing and discounts",
+        "Dedicated account management",
+        "Flexible scheduling and route optimisation",
+      ],
+      icon: "🏢",
     },
     {
-      id: "door-to-door",
-      title: "Door to door delivery",
-      description: "Direct pickup and drop-off from your preferred locations across the city.",
-      features: ["Flexible scheduling", "Proof of delivery", "Careful handling"],
-      icon: "🚚",
-    },
-    {
-      id: "payment-on-delivery",
-      title: "Payment on delivery",
-      description: "Collect payment at delivery with verification and confirmation for sellers.",
-      features: ["Payment verification", "Buyer confirmation", "Secure cash handling"],
-      icon: "💳",
-    },
-    {
-      id: "warehousing",
-      title: "Warehousing",
-      description: "Secure storage and organized inventory handling for short-term needs.",
-      features: ["Safe storage", "Item cataloging", "Quick retrieval"],
-      icon: "🏬",
+      id: "international",
+      title: "International forwarding",
+      description:
+        "Extending your reach beyond Port Harcourt? We offer international forwarding for clients who need reliable logistics support for goods moving across borders.",
+      features: [
+        "Partner network for international shipments",
+        "Documentation and customs support guidance",
+        "Tailored solutions for import and export needs",
+      ],
+      icon: "🌐",
     },
   ];
 
   return (
     <div className={`min-h-screen bg-black text-white`}>
       <main className="mx-auto max-w-7xl px-4 sm:px-6">
-        <section className="pt-24 md:pt-32">
+        <section className="pt-6 md:pt-10">
           <FadeInOnScroll>
             <div className="text-center">
               <div className="mx-auto h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
               <h1 className={`mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight px-1`}>Our Services</h1>
-              <p className="mt-4 text-[color:var(--brand-text-muted)]">Errand services and dispatch delivery, presented in clean, professional cards.</p>
+              <p className="mt-4 text-[color:var(--brand-text-muted)] max-w-3xl mx-auto px-1">
+                We offer logistics solutions for individuals and businesses, from local errands and dispatch to enterprise programs and international forwarding support.
+              </p>
             </div>
           </FadeInOnScroll>
         </section>
@@ -93,14 +102,14 @@ export default function ServicesPage() {
           <FadeInOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               <div className="rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
-                <div className="text-lg font-semibold mb-2">City-wide Focus</div>
-                <div className="text-sm text-[color:var(--brand-text-muted)]">Our core operations are within Port Harcourt for speed and reliability.</div>
+                <div className="text-lg font-semibold mb-2">City wide focus</div>
+                <div className="text-sm text-[color:var(--brand-text-muted)]">Our core operations are within Port Harcourt for speed, consistency, and reliability.</div>
               </div>
               <div className="rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
                 <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-3" />
-                <div className="text-lg font-semibold mb-2">Interstate Support (Partner Parks)</div>
+                <div className="text-lg font-semibold mb-2">Interstate support</div>
                 <div className="text-sm text-[color:var(--brand-text-muted)]">
-                  We only help our customers do interstate deliveries using partner businesses. If you can’t go to the park, we can pick up from your location and waybill on your behalf. Fees include park charges and handling. Confirmation receipts and tracking details are provided for transparency.
+                  Interstate deliveries can be arranged through third party providers at an additional cost. Where helpful, we can collect from your location and coordinate waybills on your behalf, with receipts and tracking shared for transparency.
                 </div>
               </div>
             </div>
@@ -112,7 +121,7 @@ export default function ServicesPage() {
         <section className="py-16">
           <FadeInOnScroll>
             <h2 className={`text-2xl md:text-3xl font-bold text-center`}>What We Offer</h2>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((s) => (
                 <div id={s.id} key={s.id} className="rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
                   <button
@@ -139,7 +148,6 @@ export default function ServicesPage() {
                           <li key={f} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><span>{f}</span></li>
                         ))}
                       </ul>
-                      <div className="mt-4 text-xs text-[color:var(--brand-text-muted)]">Professional, subtle animations and responsive layout applied.</div>
                     </div>
                   )}
                 </div>
@@ -160,9 +168,19 @@ export default function ServicesPage() {
           <FadeInOnScroll>
             <div className="relative overflow-hidden rounded-2xl bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)]">
               <div className="p-8 md:p-12">
-                <div className={`text-2xl md:text-3xl font-extrabold`}>Ready to book a service?</div>
-                <div className="mt-2 text-sm md:text-base text-[color:var(--brand-text-muted)]">Errands and dispatch, handled professionally.</div>
-                <Link prefetch={false} href="/book/pickup" className="mt-6 inline-block rounded-xl px-6 py-3 text-black font-semibold bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] shadow-[0_0_30px_var(--brand-glow)] transition-all duration-200 hover:shadow-[0_10px_40px_var(--brand-glow-hover)]">Book a Service Now</Link>
+                <div className={`text-2xl md:text-3xl font-extrabold`}>Ready to get started?</div>
+                <div className="mt-2 text-sm md:text-base text-[color:var(--brand-text-muted)]">Book an errand or contact us for a tailored logistics plan.</div>
+                    <div className="mt-6 text-sm text-[color:var(--brand-text-muted)]">
+                      View{" "}
+                      <Link prefetch={false} href="/pricing" className="text-[color:var(--gold-end)] underline underline-offset-4 hover:opacity-90">
+                        pricing
+                      </Link>{" "}
+                      or{" "}
+                      <Link prefetch={false} href="/contact" className="text-[color:var(--gold-end)] underline underline-offset-4 hover:opacity-90">
+                        contact us
+                      </Link>
+                      .
+                    </div>
               </div>
             </div>
           </FadeInOnScroll>
@@ -181,8 +199,8 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
                   <div className={`font-semibold mb-3`}>Contact</div>
-                  <div className="text-sm text-zinc-300">+234 807 871 2534</div>
-                  <div className="text-sm text-zinc-300">0803 842 9173</div>
+                  <div className="text-sm text-zinc-300">08157116337</div>
+                  <div className="text-sm text-zinc-300">08038429173</div>
                   <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
                 </div>
                 <div>
@@ -191,7 +209,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2026 TribesByWendy Errands. All rights reserved.</div>
           </FadeInOnScroll>
         </footer>
       </main>
