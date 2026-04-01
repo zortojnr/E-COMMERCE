@@ -338,7 +338,7 @@ export default function Home() {
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
                   <li>08157116337</li>
                   <li>08038429173</li>
-                  <li>@Tribesbywendyerrands</li>
+                  <li><span className="font-semibold text-white">Follow Us on Instagram</span><br />@Tribesbywendyerrands</li>
                   <li>No. 6, Mission Road, Alakahia</li>
                 </ul>
               </div>
@@ -349,7 +349,7 @@ export default function Home() {
                 Please arrange all deliveries through our official channels. We do not authorize customers to contact drivers directly for service requests.
               </p>
               <p className="text-sm text-[color:var(--brand-text-muted)]">
-                © 2026 TribesByWendy Errands. All rights reserved.
+                © 2023 TribesByWendy Errands. All rights reserved.
               </p>
             </div>
           </FadeIn>

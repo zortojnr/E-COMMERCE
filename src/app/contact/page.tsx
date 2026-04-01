@@ -47,7 +47,7 @@ export default function ContactPage() {
                     <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
                   </svg>
                 </div>
-                <div className={`font-semibold`}>Instagram</div>
+                <div className={`font-semibold`}>Follow Us on Instagram</div>
               </div>
               <div className="text-zinc-300">@Tribesbywendyerrands</div>
             </motion.a>
@@ -129,7 +129,8 @@ export default function ContactPage() {
                   <div className="text-sm text-zinc-300">08157116337</div>
                   <div className="text-sm text-zinc-300">08038429173</div>
                   <a href={`mailto:${EMAIL}`} className="text-sm text-zinc-300 underline underline-offset-4 block break-all">{EMAIL}</a>
-                  <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
+                  <div className={`font-semibold mt-3 mb-1`}>Follow Us on Instagram</div>
+                  <div className="text-sm text-zinc-300">@Tribesbywendyerrands</div>
                 </div>
                 <div>
                   <div className={`font-semibold mb-3`}>Locations</div>
@@ -137,7 +138,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2026 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

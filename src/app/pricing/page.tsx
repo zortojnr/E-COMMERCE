@@ -26,7 +26,6 @@ const rows: PriceRow[] = [
     note:
       "Interstate delivery can be arranged through third party providers at an additional cost, including park charges and handling where applicable.",
   },
-  { label: "International shipping", price: "" },
 ];
 
 export default function PricingPage() {

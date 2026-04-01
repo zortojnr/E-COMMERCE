@@ -180,7 +180,8 @@ export default function TestimonialsPage() {
                   <div className={`font-semibold mb-3`}>Contact</div>
                   <div className="text-sm text-zinc-300">08157116337</div>
                   <div className="text-sm text-zinc-300">08038429173</div>
-                  <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
+                  <div className={`font-semibold mt-3 mb-1`}>Follow Us on Instagram</div>
+                  <div className="text-sm text-zinc-300">@Tribesbywendyerrands</div>
                 </div>
                 <div>
                   <div className={`font-semibold mb-3`}>Locations</div>
@@ -188,7 +189,7 @@ export default function TestimonialsPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2026 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

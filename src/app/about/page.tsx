@@ -68,7 +68,7 @@ export default function AboutPage() {
                 <div className="h-1 w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
                 <div className={`text-2xl font-bold text-[color:var(--gold-end)]`}>Who we are</div>
                 <p className="text-zinc-300 leading-relaxed">
-                  TribesByWendy Errands is a premium logistics company rooted in Port Harcourt, Nigeria. We were built on a simple belief: that every delivery, no matter how big or small, deserves to be treated with professionalism, care, and urgency.
+                  Tribes by Wendy Errand Limited is a premium logistics company rooted in Port Harcourt, Nigeria. We were built on a simple belief: that every delivery, no matter how big or small, deserves to be treated with professionalism, care, and urgency.
                 </p>
                 <p className="text-zinc-300 leading-relaxed">
                   From individual errands to business scale dispatch, we provide end to end logistics solutions that keep our clients moving. Our team combines deep local knowledge of Port Harcourt&apos;s routes with a commitment to showing up on time, every time.
@@ -310,7 +310,8 @@ export default function AboutPage() {
                   <div className={`font-semibold mb-3`}>Contact</div>
                   <div className="text-sm text-zinc-300">08157116337</div>
                   <div className="text-sm text-zinc-300">08038429173</div>
-                  <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
+                  <div className={`font-semibold mt-3 mb-1`}>Follow Us on Instagram</div>
+                  <div className="text-sm text-zinc-300">@Tribesbywendyerrands</div>
                 </div>
                 <div>
                   <div className={`font-semibold mb-3`}>Locations</div>
@@ -318,7 +319,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2026 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </FadeInOnScroll>
         </footer>
       </main>

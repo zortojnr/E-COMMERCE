@@ -35,13 +35,8 @@ export default function ServicesPage() {
       id: "errand",
       title: "Errand logistics",
       description:
-        "Let us handle the daily runs so you can focus on what matters most. Whether it is collecting documents, dropping off packages, or managing routine tasks across the city, our errand service is fast, trackable, and stress free.",
-      features: [
-        "Same day delivery available",
-        "Documents and packages handled with care",
-        "Real time tracking updates",
-        "Ideal for individuals and small businesses",
-      ],
+        "Let us handle your daily errands so you can focus on what matters most. We take care of document collection, package delivery, and routine tasks across the city with speed and reliability.",
+      features: [],
       icon: "🧾",
     },
     {
@@ -143,11 +138,13 @@ export default function ServicesPage() {
                   </button>
                   {openId === s.id && (
                     <div id={`${s.id}-panel`} role="region" aria-label={`${s.title} details`} className="px-6 pb-6">
-                      <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-zinc-300">
-                        {s.features.map((f) => (
-                          <li key={f} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><span>{f}</span></li>
-                        ))}
-                      </ul>
+                      {s.features.length > 0 && (
+                        <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-zinc-300">
+                          {s.features.map((f) => (
+                            <li key={f} className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" /><span>{f}</span></li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   )}
                 </div>
@@ -201,7 +198,8 @@ export default function ServicesPage() {
                   <div className={`font-semibold mb-3`}>Contact</div>
                   <div className="text-sm text-zinc-300">08157116337</div>
                   <div className="text-sm text-zinc-300">08038429173</div>
-                  <div className="text-sm text-zinc-300">Instagram: @Tribesbywendyerrands</div>
+                  <div className={`font-semibold mt-3 mb-1`}>Follow Us on Instagram</div>
+                  <div className="text-sm text-zinc-300">@Tribesbywendyerrands</div>
                 </div>
                 <div>
                   <div className={`font-semibold mb-3`}>Locations</div>
@@ -209,7 +207,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2026 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
           </FadeInOnScroll>
         </footer>
       </main>
