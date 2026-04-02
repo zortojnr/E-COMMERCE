@@ -128,6 +128,23 @@ export default function ServicesPage() {
 
         
 
+        <section className="pb-10">
+          <FadeInOnScroll>
+            <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
+              <div className="relative aspect-[16/9] sm:aspect-[2/1]">
+                <Image
+                  src="/2.jpg"
+                  alt="Logistics service in action"
+                  fill
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+              </div>
+            </div>
+          </FadeInOnScroll>
+        </section>
+
         <section className="py-16">
           <FadeInOnScroll>
             <h2 className={`text-2xl md:text-3xl font-bold text-center`}>What We Offer</h2>

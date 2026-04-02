@@ -292,6 +292,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-12 sm:py-16 bg-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <FadeIn>
+            <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] bg-[color:var(--brand-bg-2)]">
+              <div className="relative aspect-[16/9] sm:aspect-[21/9]">
+                <Image
+                  src="/5.jpg"
+                  alt="Logistics and dispatch service"
+                  fill
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-black">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">

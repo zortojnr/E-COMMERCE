@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } };
@@ -13,11 +14,24 @@ export default function ContactPage() {
       <main className="mx-auto max-w-7xl px-4 sm:px-6">
         <section className="pt-6 md:pt-10">
           <div className="max-w-3xl">
-            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="space-y-4 sm:space-y-6">
-              <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight`}>Get in Touch With Us</h1>
-              <div className="h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
-              <p className="max-w-xl text-zinc-300">Reliable support for errands and dispatch, available in Port Harcourt.</p>
-            </motion.div>
+            <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
+              <Image
+                src="/6.jpg"
+                alt="Customer support and logistics coordination"
+                fill
+                priority
+                sizes="(min-width: 1024px) 768px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/55 to-black/25" />
+              <div className="relative p-6 sm:p-8">
+                <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={item} className="space-y-4 sm:space-y-6">
+                  <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight`}>Get in Touch With Us</h1>
+                  <div className="h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
+                  <p className="max-w-xl text-zinc-200">Reliable support for errands and dispatch, available in Port Harcourt.</p>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 

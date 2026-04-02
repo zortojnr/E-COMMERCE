@@ -213,32 +213,48 @@ export default function AboutPage() {
         <section className="py-16">
           <FadeInOnScroll>
             <h2 className={`text-2xl md:text-3xl font-bold`}>How We Work</h2>
-            <div className="mt-8 relative rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
-              <div className="hidden md:block absolute left-1/2 top-6 bottom-6 w-px -translate-x-1/2 bg-[linear-gradient(180deg,var(--gold-start),var(--gold-end))]" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  {[
-                    { n: 1, t: "Request a Delivery", d: "Tell us what you need moved or delivered." },
-                    { n: 2, t: "We Collect and Deliver", d: "A trained rider handles your request with care." },
-                  ].map((step) => (
-                    <div key={step.n} className="rounded-xl p-6 bg-[rgba(22,22,22,0.7)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
-                      <div className="w-8 h-8 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] text-black flex items-center justify-center font-bold mb-4">{step.n}</div>
-                      <div className={`font-semibold mb-1`}>{step.t}</div>
-                      <div className="text-sm text-zinc-300">{step.d}</div>
-                    </div>
-                  ))}
+            <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="relative rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
+                <div className="hidden md:block absolute left-1/2 top-6 bottom-6 w-px -translate-x-1/2 bg-[linear-gradient(180deg,var(--gold-start),var(--gold-end))]" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    {[
+                      { n: 1, t: "Request a Delivery", d: "Tell us what you need moved or delivered." },
+                      { n: 2, t: "We Collect and Deliver", d: "A trained rider handles your request with care." },
+                    ].map((step) => (
+                      <div key={step.n} className="rounded-xl p-6 bg-[rgba(22,22,22,0.7)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
+                        <div className="w-8 h-8 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] text-black flex items-center justify-center font-bold mb-4">{step.n}</div>
+                        <div className={`font-semibold mb-1`}>{step.t}</div>
+                        <div className="text-sm text-zinc-300">{step.d}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { n: 3, t: "You Relax", d: "Track progress and receive your items on time." },
+                      { n: 4, t: "Review and confirmation", d: "We share delivery confirmation and feedback options." },
+                    ].map((step) => (
+                      <div key={step.n} className="rounded-xl p-6 bg-[rgba(22,22,22,0.7)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
+                        <div className="w-8 h-8 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] text-black flex items-center justify-center font-bold mb-4">{step.n}</div>
+                        <div className={`font-semibold mb-1`}>{step.t}</div>
+                        <div className="text-sm text-zinc-300">{step.d}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="space-y-6">
-                  {[
-                    { n: 3, t: "You Relax", d: "Track progress and receive your items on time." },
-                    { n: 4, t: "Review and confirmation", d: "We share delivery confirmation and feedback options." },
-                  ].map((step) => (
-                    <div key={step.n} className="rounded-xl p-6 bg-[rgba(22,22,22,0.7)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
-                      <div className="w-8 h-8 rounded-full bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] text-black flex items-center justify-center font-bold mb-4">{step.n}</div>
-                      <div className={`font-semibold mb-1`}>{step.t}</div>
-                      <div className="text-sm text-zinc-300">{step.d}</div>
-                    </div>
-                  ))}
+              </div>
+
+              <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
+                <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
+                  <Image
+                    src="/7.jpg"
+                    alt="Delivery and logistics process"
+                    fill
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                    className="object-cover"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
                 </div>
               </div>
             </div>
