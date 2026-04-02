@@ -90,6 +90,21 @@ export default function ServicesPage() {
                 We offer logistics solutions for individuals and businesses, from local errands and dispatch to enterprise programs and international forwarding support.
               </p>
             </div>
+            <div className="mt-10 sm:mt-12">
+              <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
+                <div className="relative aspect-[16/9] sm:aspect-[21/9]">
+                  <Image
+                    src="/3.jpg"
+                    alt="Tribes by Wendy Errand Limited services"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 1024px, 100vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/15" />
+                </div>
+              </div>
+            </div>
           </FadeInOnScroll>
         </section>
 

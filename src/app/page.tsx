@@ -41,6 +41,14 @@ export default function Home() {
     <div className="min-h-screen bg-[color:var(--brand-bg)] text-[color:var(--brand-text)]">
       {/* Hero Section with Faded Background */}
       <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-20 overflow-hidden">
+        <Image
+          src="/1.jpg"
+          alt="Tribes by Wendy Errand Limited service showcase"
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 object-cover opacity-35"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0B0B0B] to-[#111] opacity-90"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,167,56,0.1),transparent_50%)]"></div>
         
