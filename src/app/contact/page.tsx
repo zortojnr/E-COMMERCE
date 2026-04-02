@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } };
 const item = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } };
 
-const EMAIL = "tribesbywendyerrands@gmail.com";
+const EMAIL = "tbwerrandsandlogisticsltd@gmail.com";
 
 export default function ContactPage() {
   return (
