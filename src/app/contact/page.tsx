@@ -14,7 +14,7 @@ export default function ContactPage() {
       <main className="mx-auto max-w-7xl px-4 sm:px-6">
         <section className="pt-6 md:pt-10">
           <div className="max-w-3xl">
-            <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
+            <div className="relative overflow-hidden rounded-none border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
               <Image
                 src="/6.jpg"
                 alt="Customer support and logistics coordination"

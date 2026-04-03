@@ -91,7 +91,7 @@ export default function ServicesPage() {
               </p>
             </div>
             <div className="mt-10 sm:mt-12">
-              <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
+              <div className="relative overflow-hidden rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
                 <div className="relative aspect-[16/9] sm:aspect-[21/9]">
                   <Image
                     src="/3.jpg"
@@ -111,11 +111,11 @@ export default function ServicesPage() {
         <section className="py-10">
           <FadeInOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-              <div className="rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
+              <div className="rounded-none p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
                 <div className="text-lg font-semibold mb-2">City wide focus</div>
                 <div className="text-sm text-[color:var(--brand-text-muted)]">Our core operations are within Port Harcourt for speed, consistency, and reliability.</div>
               </div>
-              <div className="rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
+              <div className="rounded-none p-6 bg-[rgba(20,20,20,0.6)] border border-[color:var(--brand-border)]">
                 <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-3" />
                 <div className="text-lg font-semibold mb-2">Interstate support</div>
                 <div className="text-sm text-[color:var(--brand-text-muted)]">
@@ -130,7 +130,7 @@ export default function ServicesPage() {
 
         <section className="pb-10">
           <FadeInOnScroll>
-            <div className="relative overflow-hidden rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
+            <div className="relative overflow-hidden rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
               <div className="relative aspect-[16/9] sm:aspect-[2/1]">
                 <Image
                   src="/2.jpg"
@@ -150,7 +150,7 @@ export default function ServicesPage() {
             <h2 className={`text-2xl md:text-3xl font-bold text-center`}>What We Offer</h2>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((s) => (
-                <div id={s.id} key={s.id} className="rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
+                <div id={s.id} key={s.id} className="rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
                   <button
                     type="button"
                     aria-controls={`${s.id}-panel`}
@@ -195,8 +195,16 @@ export default function ServicesPage() {
 
         <section className="my-20">
           <FadeInOnScroll>
-            <div className="relative overflow-hidden rounded-2xl bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)]">
-              <div className="p-8 md:p-12">
+            <div className="relative overflow-hidden rounded-none bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)]">
+              <Image
+                src="/9.jpg"
+                alt="Get started with Tribes by Wendy Errand Limited"
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/55 to-black/25" />
+              <div className="relative z-10 p-8 md:p-12">
                 <div className={`text-2xl md:text-3xl font-extrabold`}>Ready to get started?</div>
                 <div className="mt-2 text-sm md:text-base text-[color:var(--brand-text-muted)]">Book an errand or contact us for a tailored logistics plan.</div>
                     <div className="mt-6 text-sm text-[color:var(--brand-text-muted)]">

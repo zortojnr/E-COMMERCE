@@ -214,7 +214,7 @@ export default function AboutPage() {
           <FadeInOnScroll>
             <h2 className={`text-2xl md:text-3xl font-bold`}>How We Work</h2>
             <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              <div className="relative rounded-2xl p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
+              <div className="relative rounded-none p-6 bg-[rgba(20,20,20,0.6)] border border-zinc-800">
                 <div className="hidden md:block absolute left-1/2 top-6 bottom-6 w-px -translate-x-1/2 bg-[linear-gradient(180deg,var(--gold-start),var(--gold-end))]" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-6">
@@ -244,7 +244,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
+              <div className="relative overflow-hidden rounded-none border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
                   <Image
                     src="/7.jpg"

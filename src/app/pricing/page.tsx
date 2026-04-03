@@ -46,7 +46,7 @@ export default function PricingPage() {
 
         <section className="py-12 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)] overflow-hidden">
+            <div className="lg:col-span-2 rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)] overflow-hidden">
               <div className="p-5 sm:p-6 border-b border-[color:var(--brand-border)]">
                 <div className="text-lg font-semibold">Rates</div>
                 <div className="text-sm text-[color:var(--brand-text-muted)]">
@@ -75,14 +75,14 @@ export default function PricingPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)] p-5 sm:p-6">
+            <div className="rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)] p-5 sm:p-6">
               <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
               <div className="text-lg font-semibold">Important notice</div>
               <p className="mt-2 text-sm text-[color:var(--brand-text-muted)] leading-relaxed">
                 Please note: we prohibit calling drivers directly to request a service. All deliveries must be
                 completed through the company&apos;s official communication channels.
               </p>
-              <div className="mt-6 rounded-xl border border-[color:var(--brand-border)] bg-black/40 p-4">
+              <div className="mt-6 rounded-none border border-[color:var(--brand-border)] bg-black/40 p-4">
                 <div className="text-sm font-semibold">Need a quote?</div>
                 <div className="mt-1 text-sm text-[color:var(--brand-text-muted)]">
                   Message us with your pickup and drop off locations, item details, and preferred time.
@@ -109,7 +109,7 @@ export default function PricingPage() {
         </section>
 
         <section className="pb-16">
-          <div className="rounded-2xl border border-[color:var(--brand-border)] bg-[color:var(--brand-bg-2)] p-6">
+          <div className="rounded-none border border-[color:var(--brand-border)] bg-[color:var(--brand-bg-2)] p-6">
             <div className="text-xl font-bold">Monthly subscriptions</div>
             <p className="mt-2 text-sm text-[color:var(--brand-text-muted)] leading-relaxed">
               Monthly subscriptions start from a minimum of 50 deliveries. We can tailor pickup schedules and

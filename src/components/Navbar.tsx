@@ -63,7 +63,7 @@ export default function Navbar() {
                 <div
                   role="menu"
                   aria-label="Services list"
-                  className="absolute left-0 mt-3 w-64 rounded-2xl bg-[rgba(20,20,20,0.85)] border border-zinc-800 shadow-lg p-2"
+                  className="absolute left-0 mt-3 w-64 rounded-none bg-[rgba(20,20,20,0.85)] border border-zinc-800 shadow-lg p-2"
                 >
                   {[
                     { href: "/services#errand", label: "Errand logistics" },
