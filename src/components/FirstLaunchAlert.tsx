@@ -19,14 +19,11 @@ export default function FirstLaunchAlert() {
         <div className="h-1 w-20 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
         <div className={`text-lg font-bold mb-2`}>Stay Vigilant</div>
         <p className="text-sm text-zinc-300 mb-3">
-          Please beware of fraudulent activities. We will never request passwords, OTPs, or advance payments outside confirmed bookings. Verify rider identity and delivery details before releasing items or funds.
+          Do not contact drivers directly.
         </p>
-        <ul className="list-disc list-inside text-sm text-zinc-300 space-y-1 mb-4">
-          <li>Do not share sensitive codes or private information.</li>
-          <li>Confirm pickup and drop off details via official channels.</li>
-          <li>Report suspicious behavior immediately.</li>
-        </ul>
-        <div className="flex justify-end">
+        <p className="text-sm text-zinc-300 mb-4">
+          All communications should be handled through the official platform to ensure safety and security.
+        </p>
           <button
             onClick={() => {
               try { localStorage.setItem("tbw_alert_ack", "1"); } catch {}
