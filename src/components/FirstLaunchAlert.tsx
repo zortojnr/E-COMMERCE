@@ -24,6 +24,7 @@ export default function FirstLaunchAlert() {
         <p className="text-sm text-zinc-300 mb-4">
           All communications should be handled through the official platform to ensure safety and security.
         </p>
+        <div className="flex justify-end">
           <button
             onClick={() => {
               try { localStorage.setItem("tbw_alert_ack", "1"); } catch {}
@@ -36,6 +37,7 @@ export default function FirstLaunchAlert() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
