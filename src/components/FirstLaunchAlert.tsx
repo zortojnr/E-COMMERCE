@@ -37,7 +37,6 @@ export default function FirstLaunchAlert() {
         </div>
       </div>
     </div>
-  </div>
   );
 }
 
