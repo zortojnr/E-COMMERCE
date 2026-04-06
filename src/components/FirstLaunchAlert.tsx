@@ -17,7 +17,7 @@ export default function FirstLaunchAlert() {
       <div className="absolute inset-0 bg-black/60 backdrop-blur" />
       <div className="relative w-[min(92vw,36rem)] max-h-[min(90dvh,36rem)] overflow-y-auto overscroll-contain rounded-2xl border border-zinc-800 bg-[#0B0B0B] p-5 sm:p-6 text-white shadow-[0_10px_40px_rgba(245,199,109,0.18)]">
         <div className="h-1 w-20 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-4" />
-        <div className={`text-lg font-bold mb-2`}>Stay Vigilant</div>
+        <div className="text-lg font-bold mb-2">Stay Vigilant</div>
         <p className="text-sm text-zinc-300 mb-3">
           Do not contact drivers directly.
         </p>
