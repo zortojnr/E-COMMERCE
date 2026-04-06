@@ -68,7 +68,7 @@ export default function AboutPage() {
                 <div className="h-1 w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
                 <div className={`text-2xl font-bold text-[color:var(--gold-end)]`}>Who we are</div>
                 <p className="text-zinc-300 leading-relaxed">
-                  Tribes by Wendy Errand Limited is a premium logistics company rooted in Port Harcourt, Nigeria. We were built on a simple belief: that every delivery, no matter how big or small, deserves to be treated with professionalism, care, and urgency.
+                  Tribes By Wendy Errands Limited is a premium logistics company rooted in Port Harcourt, Nigeria. We were built on a simple belief: that every delivery, no matter how big or small, deserves to be treated with professionalism, care, and urgency.
                 </p>
                 <p className="text-zinc-300 leading-relaxed">
                   From individual errands to business scale dispatch, we provide end to end logistics solutions that keep our clients moving. Our team combines deep local knowledge of Port Harcourt&apos;s routes with a commitment to showing up on time, every time.
@@ -84,7 +84,7 @@ export default function AboutPage() {
               <div className="relative aspect-square rounded-2xl overflow-hidden border border-zinc-800">
                 <Image
                   src="/hero.jpg"
-                  alt="TribesByWendy Logistics Operations"
+                  alt="Tribes By Wendy Errands Limited Logistics Operations"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -167,7 +167,7 @@ export default function AboutPage() {
 
         <section className="py-16">
           <FadeInOnScroll>
-            <h2 className={`text-2xl md:text-3xl font-bold text-center`}>Why choose TribesByWendy Errands?</h2>
+            <h2 className={`text-2xl md:text-3xl font-bold text-center`}>Why choose Tribes By Wendy Errands Limited?</h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {[
                 { title: "Proven reliability", body: "99% on time delivery rate. We take punctuality personally." },
@@ -316,8 +316,8 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Image src="/logo.jpg" alt="TribesByWendy logo" width={40} height={40} className="rounded" />
-                  <span className={`font-semibold`}>TribesByWendy Errands</span>
+                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
+                  <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>
               </div>
@@ -335,7 +335,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 Tribes By Wendy Errands Limited. All rights reserved.</div>
           </FadeInOnScroll>
         </footer>
       </main>

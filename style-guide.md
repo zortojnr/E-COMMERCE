@@ -1,4 +1,4 @@
-# TribesByWendy Logistics – Style Guide
+# Tribes By Wendy Errands Limited – Style Guide
 
 ## Brand Colors (Black + Gold)
 Background Primary: #000000

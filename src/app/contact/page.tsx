@@ -133,7 +133,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded bg-[linear-gradient(135deg,var(--gold-start),var(--gold-end))]" aria-hidden />
-                  <span className={`font-semibold`}>TribesByWendy Errands</span>
+                  <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>
               </div>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 Tribes By Wendy Errands Limited. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

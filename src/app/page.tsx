@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-20 overflow-hidden">
         <Image
           src="/1.jpg"
-          alt="Tribes by Wendy Errand Limited service showcase"
+          alt="Tribes By Wendy Errands Limited service showcase"
           fill
           priority
           sizes="100vw"
@@ -339,9 +339,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-2 space-y-6">
                 <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-                  <Image src="/logo.jpg" alt="TribesByWendy logo" width={48} height={48} className="rounded shrink-0" />
+                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={48} height={48} className="rounded shrink-0" />
                   <div className="min-w-0">
-                    <div className="font-bold text-lg sm:text-xl text-white truncate">TribesByWendy Errands</div>
+                    <div className="font-bold text-lg sm:text-xl text-white truncate">Tribes By Wendy Errands Limited</div>
                     <div className="text-sm text-[color:var(--brand-text-muted)]">THINK LOGISTICS, THINK US</div>
                   </div>
                 </div>
@@ -376,7 +376,7 @@ export default function Home() {
                 Please arrange all deliveries through our official channels. We do not authorize customers to contact drivers directly for service requests.
               </p>
               <p className="text-sm text-[color:var(--brand-text-muted)]">
-                © 2023 TribesByWendy Errands. All rights reserved.
+                © 2023 Tribes By Wendy Errands Limited. All rights reserved.
               </p>
             </div>
           </FadeIn>

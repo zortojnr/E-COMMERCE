@@ -47,7 +47,7 @@ export default function TestimonialsPage() {
       name: "Richard",
       type: "Business & Personal Delivery Customer",
       text:
-        "I’ve used several delivery companies for work, but the day I tried TribesByWendy Errands, everything changed. Their speed, availability and coordination are excellent, especially during urgent deliveries. They truly stand out.",
+        "I’ve used several delivery companies for work, but the day I tried Tribes By Wendy Errands Limited, everything changed. Their speed, availability and coordination are excellent, especially during urgent deliveries. They truly stand out.",
       avatar: avatars[3],
     },
     { name: "Chinedu", type: "Customer", text: "Delivery was slow and the rider was not courteous.", avatar: avatars[0], rating: 1 },
@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
         <section className="pt-6 md:pt-10 text-center">
           <motion.div initial="hidden" animate="show" variants={item}>
             <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight px-1`}>What Our Customers Say About Us</h1>
-            <p className="mt-4 text-zinc-300">Real experiences from real users who trust TribesByWendy Errands for deliveries, errands and fast logistics in Port Harcourt.</p>
+            <p className="mt-4 text-zinc-300">Real experiences from real users who trust Tribes By Wendy Errands Limited for deliveries, errands and fast logistics in Port Harcourt.</p>
             <div className="mx-auto mt-6 h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
           </motion.div>
         </section>
@@ -111,7 +111,7 @@ export default function TestimonialsPage() {
         <section className="py-16">
           <motion.div initial="hidden" animate="show" variants={item} className="rounded-2xl p-5 sm:p-8 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
             <div className="text-3xl mb-4">“</div>
-            <div className={`text-base sm:text-lg md:text-xl font-semibold`}>Trusted by individuals, students and business owners, TribesByWendy Errands continues to deliver reliability, speed and peace of mind.</div>
+            <div className={`text-base sm:text-lg md:text-xl font-semibold`}>Trusted by individuals, students and business owners, Tribes By Wendy Errands Limited continues to deliver reliability, speed and peace of mind.</div>
           </motion.div>
         </section>
 
@@ -170,8 +170,8 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Image src="/logo.jpg" alt="TribesByWendy logo" width={40} height={40} className="rounded" />
-                  <span className={`font-semibold`}>TribesByWendy Errands</span>
+                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
+                  <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>
               </div>
@@ -189,7 +189,7 @@ export default function TestimonialsPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 text-xs text-zinc-500">© 2023 TribesByWendy Errands. All rights reserved.</div>
+            <div className="mt-10 text-xs text-zinc-500">© 2023 Tribes By Wendy Errands Limited. All rights reserved.</div>
           </motion.div>
         </footer>
       </main>

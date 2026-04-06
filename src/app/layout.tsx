@@ -7,7 +7,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "TribesByWendy Errands · Premium Logistics",
+  title: "Tribes By Wendy Errands Limited · Premium Logistics",
   description: "Affordable, fast and reliable errands and dispatch services in Port Harcourt.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
