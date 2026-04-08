@@ -64,18 +64,6 @@ export default function ServicesPage() {
       ],
       icon: "🏢",
     },
-    {
-      id: "international",
-      title: "International forwarding",
-      description:
-        "Extending your reach beyond Port Harcourt? We offer international forwarding for clients who need reliable logistics support for goods moving across borders.",
-      features: [
-        "Partner network for international shipments",
-        "Documentation and customs support guidance",
-        "Tailored solutions for import and export needs",
-      ],
-      icon: "🌐",
-    },
   ];
 
   return (
