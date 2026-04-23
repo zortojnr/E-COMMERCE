@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex h-[4.5rem] sm:h-20 items-center gap-2">
           {/* Logo - Left */}
           <Link href="/" prefetch={false} className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={48} height={48} className="rounded w-10 h-10 sm:w-12 sm:h-12 shrink-0" />
+            <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={48} height={48} className="rounded w-10 h-10 sm:w-12 sm:h-12 shrink-0" />
             <div className="leading-tight min-w-0">
               <div className="font-bold tracking-tight text-white text-sm sm:text-base md:text-lg truncate">Tribes By Wendy Errands Limited</div>
               <div className="hidden sm:block text-xs text-[color:var(--brand-text-muted)] truncate">THINK LOGISTICS, THINK US</div>
@@ -174,7 +174,7 @@ function MobileMenu() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={36} height={36} className="rounded" />
+                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={36} height={36} className="rounded" />
                   <div className="leading-tight">
                     <div className="font-semibold tracking-tight text-white">Tribes By Wendy Errands Limited</div>
                     <div className="text-xs text-[color:var(--brand-text-muted)]">THINK LOGISTICS, THINK US</div>

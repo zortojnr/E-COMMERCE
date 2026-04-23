@@ -15,10 +15,10 @@ const item = {
 
 export default function TestimonialsPage() {
   const avatars = [
-    "/globe.svg",
-    "/next.svg",
-    "/window.svg",
-    "/vercel.svg",
+    "/images/avatars/avatar1.jpg",
+    "/images/avatars/avatar2.jpg",
+    "/images/avatars/avatar3.jpg",
+    "/images/avatars/avatar4.jpg",
   ];
   const baseList = [
     {
@@ -169,7 +169,7 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
+                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
                   <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>
