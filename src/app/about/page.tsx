@@ -231,7 +231,7 @@ export default function AboutPage() {
                   </div>
                   <div className="space-y-6">
                     {[
-                      { n: 3, t: "You Relax", d: "Track progress and receive your items on time." },
+                      { n: 3, t: "You Relax", d: "We confirm pickup and delivery so you know when your items arrive." },
                       { n: 4, t: "Review and confirmation", d: "We share delivery confirmation and feedback options." },
                     ].map((step) => (
                       <div key={step.n} className="rounded-xl p-6 bg-[rgba(22,22,22,0.7)] backdrop-blur-sm border border-zinc-800 hover:border-[color:var(--gold-end)] transition-all duration-200">
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 { q: "What are your operating hours?", a: "Monday to Saturday, 8am to 6pm. Urgent requests are available on request." },
                 { q: "Which areas do you currently serve?", a: "Port Harcourt city wide, with partner coverage for interstate logistics." },
                 { q: "How is pricing calculated?", a: "Transparent pricing based on distance, item type, and urgency." },
-                { q: "Can I track progress?", a: "Yes. We provide updates during collection and delivery." },
+                { q: "Will I get updates on my request?", a: "Yes. We share updates during collection and delivery through our official channels." },
                 { q: "Can I reschedule?", a: "Yes. Please contact us as early as possible to adjust your collection window." },
               ].map((f, i) => (
                 <details key={f.q} className="group">

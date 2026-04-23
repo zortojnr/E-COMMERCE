@@ -47,22 +47,10 @@ export default function ServicesPage() {
       features: [
         "Express and scheduled delivery options",
         "Secure packaging and professional handling",
-        "Signature confirmation on delivery",
+        "Careful handoff at pickup and delivery",
         "Suitable for e commerce, retail, and corporate clients",
       ],
       icon: "📦",
-    },
-    {
-      id: "enterprise",
-      title: "Enterprise logistics",
-      description:
-        "For businesses with high volume delivery needs, we offer scalable logistics solutions tailored to your operations. We work closely with enterprise clients to create efficient, consistent delivery workflows.",
-      features: [
-        "Volume based pricing and discounts",
-        "Dedicated account management",
-        "Flexible scheduling and route optimisation",
-      ],
-      icon: "🏢",
     },
   ];
 
@@ -75,7 +63,7 @@ export default function ServicesPage() {
               <div className="mx-auto h-px w-24 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))]" />
               <h1 className={`mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight px-1`}>Our Services</h1>
               <p className="mt-4 text-[color:var(--brand-text-muted)] max-w-3xl mx-auto px-1">
-                We offer logistics solutions for individuals and businesses, from local errands and dispatch to enterprise programs and international forwarding support.
+                We offer local logistics for individuals and businesses: errands and dispatch across Port Harcourt, with clear communication and dependable handling.
               </p>
             </div>
             <div className="mt-10 sm:mt-12">
@@ -107,7 +95,7 @@ export default function ServicesPage() {
                 <div className="h-1 w-16 bg-[linear-gradient(90deg,var(--gold-start),var(--gold-end))] mb-3" />
                 <div className="text-lg font-semibold mb-2">Interstate support</div>
                 <div className="text-sm text-[color:var(--brand-text-muted)]">
-                  Interstate deliveries can be arranged through third party providers at an additional cost. Where helpful, we can collect from your location and coordinate waybills on your behalf, with receipts and tracking shared for transparency.
+                  Interstate deliveries can be arranged through third party providers at an additional cost. Where helpful, we can collect from your location and coordinate waybills on your behalf, with receipts and paperwork shared for transparency.
                 </div>
               </div>
             </div>

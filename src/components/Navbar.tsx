@@ -68,8 +68,6 @@ export default function Navbar() {
                   {[
                     { href: "/services#errand", label: "Errand logistics" },
                     { href: "/services#dispatch", label: "Dispatch delivery" },
-                    { href: "/services#enterprise", label: "Enterprise logistics" },
-                    { href: "/services#international", label: "International forwarding" },
                   ].map((item) => (
                     <Link
                       key={item.href}

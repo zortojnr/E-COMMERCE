@@ -143,7 +143,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
-                      Real time tracking updates
+                      Clear communication from request to delivery
                     </li>
                   </ul>
                   <Link href="/services" className="inline-flex items-center gap-2 mt-6 text-[color:var(--gold-end)] hover:text-[color:var(--gold-start)] transition-colors font-semibold">
@@ -179,7 +179,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[color:var(--gold-end)] rounded-full"></span>
-                      Signature confirmation
+                      Scheduled pickup and delivery windows
                     </li>
                   </ul>
                   <Link href="/services" className="inline-flex items-center gap-2 mt-6 text-[color:var(--gold-end)] hover:text-[color:var(--gold-start)] transition-colors font-semibold">
@@ -204,7 +204,7 @@ export default function Home() {
                 Complete Logistics Solutions
               </h2>
               <p className="text-base sm:text-lg text-[color:var(--brand-text-muted)] max-w-2xl mx-auto px-1">
-                From local deliveries to enterprise logistics, we provide comprehensive solutions tailored to your needs.
+                From Port Harcourt errands to same-day dispatch, we provide dependable local solutions tailored to your needs.
               </p>
             </div>
             
@@ -218,7 +218,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-[color:var(--brand-text)] mb-4">Reliable Service</h3>
                 <p className="text-[color:var(--brand-text-muted)] mb-6">
-                  Consistent, dependable logistics with professional handling and real time tracking.
+                  Consistent, dependable logistics with professional handling and clear updates at pickup and delivery.
                 </p>
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
                   <li className="flex items-start gap-3">
@@ -231,7 +231,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
-                    <span>Real time tracking updates</span>
+                    <span>Plain-language updates when your job moves</span>
                   </li>
                 </ul>
               </div>
@@ -239,7 +239,9 @@ export default function Home() {
               {/* Service 2 */}
               <div className="group bg-gradient-to-b from-[#111] to-[#0B0B0B] rounded-2xl p-5 sm:p-8 border border-[color:var(--brand-border)] hover:border-[color:var(--gold-end)] transition-all duration-300 hover:shadow-[0_10px_40px_var(--brand-glow)]">
                 <div className="w-12 h-12 bg-[linear-gradient(135deg,var(--gold-start),var(--gold-end))] rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-black text-2xl font-extrabold">₦</span>
+                  <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold text-[color:var(--brand-text)] mb-4">Affordable Pricing</h3>
                 <p className="text-[color:var(--brand-text-muted)] mb-6">
@@ -248,7 +250,7 @@ export default function Home() {
                 <ul className="space-y-2 text-sm text-[color:var(--brand-text-muted)]">
                   <li className="flex items-start gap-3">
                     <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
-                    <span>Transparent pricing in naira</span>
+                    <span>Transparent, upfront pricing</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
@@ -279,7 +281,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
-                    <span>Optimized route planning</span>
+                    <span>Familiar neighborhoods and reliable local riders</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-2 w-2 h-2 bg-[color:var(--gold-end)] rounded-full shrink-0"></span>
