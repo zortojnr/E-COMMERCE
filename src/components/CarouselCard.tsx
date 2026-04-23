@@ -9,7 +9,6 @@ export default function CarouselCard({ images, intervalMs = 5000, aspect = "squa
   const [paused, setPaused] = useState(false);
   const [failed, setFailed] = useState<Record<number, boolean>>({});
   const timerRef = useRef<number | null>(null);
-  const isProd = process.env.NODE_ENV === "production";
   const visibleCount = images.filter((_, i) => !failed[i]).length;
   useEffect(() => {
     if (paused || images.length === 0 || visibleCount === 0) return;
@@ -72,7 +71,6 @@ export default function CarouselCard({ images, intervalMs = 5000, aspect = "squa
               priority={isPriority}
               className={`object-cover transition-opacity duration-500 ${isCurrent ? "opacity-100" : "opacity-0"}`}
               onError={() => setFailed((f) => ({ ...f, [i]: true }))}
-              unoptimized={!isProd}
               {...(loadingProp ? { loading: loadingProp } : {})}
             />
           );

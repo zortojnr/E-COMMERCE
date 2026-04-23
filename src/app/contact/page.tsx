@@ -16,7 +16,7 @@ export default function ContactPage() {
           <div className="max-w-3xl">
             <div className="relative overflow-hidden rounded-none border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
               <Image
-                src="/6.jpg"
+                src="/globe.svg"
                 alt="Customer support and logistics coordination"
                 fill
                 priority

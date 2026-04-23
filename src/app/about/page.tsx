@@ -6,11 +6,13 @@ import { logger } from "@/lib/logger";
 
 function FadeInOnScroll({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const loggedRef = useRef(false);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    setVisible(false);
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { 
         if (e.isIntersecting) {
@@ -83,7 +85,7 @@ export default function AboutPage() {
             <FadeInOnScroll>
               <div className="relative aspect-square rounded-2xl overflow-hidden border border-zinc-800">
                 <Image
-                  src="/hero.jpg"
+                  src="/globe.svg"
                   alt="Tribes By Wendy Errands Limited Logistics Operations"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -247,7 +249,7 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-none border border-zinc-800 bg-[rgba(20,20,20,0.6)]">
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[260px]">
                   <Image
-                    src="/7.jpg"
+                    src="/window.svg"
                     alt="Delivery and logistics process"
                     fill
                     sizes="(min-width: 1024px) 560px, 100vw"
@@ -316,7 +318,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
+                  <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
                   <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>

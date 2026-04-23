@@ -14,12 +14,11 @@ const item = {
 };
 
 export default function TestimonialsPage() {
-  const isProd = process.env.NODE_ENV === "production";
   const avatars = [
-    "/images/avatars/avatar1.jpg",
-    "/images/avatars/avatar2.jpg",
-    "/images/avatars/avatar3.jpg",
-    "/images/avatars/avatar4.jpg",
+    "/globe.svg",
+    "/next.svg",
+    "/window.svg",
+    "/vercel.svg",
   ];
   const baseList = [
     {
@@ -86,7 +85,7 @@ export default function TestimonialsPage() {
               <motion.div key={i} variants={item} className="rounded-xl p-6 bg-[rgba(20,20,20,0.55)] border border-zinc-800 hover:border-[color:var(--gold-end)] transition-colors duration-200">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full overflow-hidden border border-[color:rgba(212,167,56,0.40)]">
-                    <Image src={t.avatar} alt={t.name} width={40} height={40} sizes="40px" unoptimized={!isProd} className="object-cover" />
+                    <Image src={t.avatar} alt={t.name} width={40} height={40} sizes="40px" className="object-cover" />
                   </div>
                   <div>
                     <div className={`font-semibold`}>{t.name}</div>
@@ -170,7 +169,7 @@ export default function TestimonialsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
+                  <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
                   <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>

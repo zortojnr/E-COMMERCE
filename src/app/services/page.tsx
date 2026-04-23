@@ -6,10 +6,12 @@ import { useEffect, useRef, useState } from "react";
 
 function FadeInOnScroll({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    setVisible(false);
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) setVisible(true); });
     }, { threshold: 0.12 });
@@ -70,7 +72,7 @@ export default function ServicesPage() {
               <div className="relative overflow-hidden rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
                 <div className="relative aspect-[16/9] sm:aspect-[21/9]">
                   <Image
-                    src="/3.jpg"
+                    src="/globe.svg"
                     alt="Tribes by Wendy Errand Limited services"
                     fill
                     priority
@@ -109,7 +111,7 @@ export default function ServicesPage() {
             <div className="relative overflow-hidden rounded-none border border-[color:var(--brand-border)] bg-[rgba(20,20,20,0.6)]">
               <div className="relative aspect-[16/9] sm:aspect-[2/1]">
                 <Image
-                  src="/2.jpg"
+                  src="/next.svg"
                   alt="Logistics service in action"
                   fill
                   sizes="(min-width: 1024px) 1024px, 100vw"
@@ -173,7 +175,7 @@ export default function ServicesPage() {
           <FadeInOnScroll>
             <div className="relative overflow-hidden rounded-none bg-[color:var(--brand-bg-2)] border border-[color:var(--brand-border)]">
               <Image
-                src="/9.jpg"
+                src="/window.svg"
                 alt="Get started with Tribes by Wendy Errand Limited"
                 fill
                 sizes="(min-width: 1024px) 1024px, 100vw"
@@ -204,7 +206,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
+                  <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={40} height={40} className="rounded" />
                   <span className={`font-semibold`}>Tribes By Wendy Errands Limited</span>
                 </div>
                 <div className="text-zinc-400">Think logistics, Think us.</div>

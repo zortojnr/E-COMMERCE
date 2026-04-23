@@ -5,10 +5,12 @@ import Image from "next/image";
 
 function FadeIn({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [v, setV] = useState(false);
+  const [v, setV] = useState(true);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    setV(false);
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) setV(true); });
     }, { threshold: 0.12 });
@@ -42,7 +44,7 @@ export default function Home() {
       {/* Hero Section with Faded Background */}
       <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-20 overflow-hidden">
         <Image
-          src="/1.jpg"
+          src="/globe.svg"
           alt="Tribes By Wendy Errands Limited service showcase"
           fill
           priority
@@ -300,7 +302,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-none border border-[color:var(--brand-border)] bg-[color:var(--brand-bg-2)]">
               <div className="relative aspect-[16/9] sm:aspect-[21/9]">
                 <Image
-                  src="/8.jpg"
+                  src="/window.svg"
                   alt="Logistics and dispatch service"
                   fill
                   sizes="(min-width: 1024px) 1024px, 100vw"
@@ -341,7 +343,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-2 space-y-6">
                 <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-                  <Image src="/logo.jpg" alt="Tribes By Wendy Errands Limited logo" width={48} height={48} className="rounded shrink-0" />
+                  <Image src="/favicon.svg" alt="Tribes By Wendy Errands Limited logo" width={48} height={48} className="rounded shrink-0" />
                   <div className="min-w-0">
                     <div className="font-bold text-lg sm:text-xl text-white truncate">Tribes By Wendy Errands Limited</div>
                     <div className="text-sm text-[color:var(--brand-text-muted)]">THINK LOGISTICS, THINK US</div>
